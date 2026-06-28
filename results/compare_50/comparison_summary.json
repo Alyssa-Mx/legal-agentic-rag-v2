@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-06-26T01:42:17",
+  "protocol": {
+    "A": "emb+bm25+RRF+rerank, original question, 1 run",
+    "D": "emb only, original question, 1 run",
+    "E": "bm25 only, original question, 1 run",
+    "B": "decompose fresh each run, 3 runs per question",
+    "C": "ReAct agent + rerank pool=30, 3 runs per question"
+  },
+  "A": {
+    "mode": "single",
+    "hit@5": 0.82,
+    "recall@5": 0.74,
+    "mrr": 0.714,
+    "ndcg@5": 0.6855,
+    "lat_avg": 0.876,
+    "n": 50
+  },
+  "B": {
+    "mode": "stability_x3",
+    "mean_hit@5": 0.7733,
+    "mean_recall@5": 0.6783,
+    "mean_mrr": 0.6873,
+    "mean_ndcg@5": 0.6338,
+    "pass@3": 0.8,
+    "always@3": 0.74,
+    "never@3": 0.2,
+    "flaky@3": 0.06,
+    "lat_avg": 1.78,
+    "n_questions": 50,
+    "runs": 150
+  },
+  "C": {
+    "mode": "stability_x3",
+    "mean_hit@5": 0.8867,
+    "mean_recall@5": 0.7522,
+    "mean_mrr": 0.8489,
+    "mean_ndcg@5": 0.7516,
+    "pass@3": 0.9,
+    "always@3": 0.86,
+    "never@3": 0.1,
+    "flaky@3": null,
+    "lat_avg": 11.02,
+    "n_questions": 50,
+    "runs": 150
+  },
+  "D": {
+    "mode": "single",
+    "hit@5": 0.8,
+    "recall@5": 0.6483,
+    "mrr": 0.6723,
+    "ndcg@5": 0.6029,
+    "lat_avg": 0.393,
+    "n": 50
+  },
+  "E": {
+    "mode": "single",
+    "hit@5": 0.68,
+    "recall@5": 0.535,
+    "mrr": 0.5797,
+    "ndcg@5": 0.5086,
+    "lat_avg": 0.022,
+    "n": 50
+  }
+}

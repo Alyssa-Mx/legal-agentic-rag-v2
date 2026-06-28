@@ -1,0 +1,8810 @@
+{
+  "variant": "decompose_plan_single_collection",
+  "label": "B: 拆解 + 分治 hybrid（单库，top-5，每题多次自由拆解）",
+  "config": {
+    "limit": 50,
+    "repeats": 3,
+    "test_set": "data/lecoqa/test.json",
+    "bm25_path": "data/lecoqa/bm25_index.pkl",
+    "plan_cache": null,
+    "decompose_mode": "fresh_each_run",
+    "per_query_top_n_multi": 2,
+    "final_top_n": 5,
+    "pipeline": "decompose + per-subquery HybridRerankRetriever + hit_count merge",
+    "coarse_top_k": 20,
+    "bm25_top_k": 20,
+    "rerank_input_top_k": 30,
+    "rerank_top_n": 5,
+    "rrf_k": 60,
+    "embed_model": "text-embedding-v3",
+    "rerank_model": "qwen3-rerank",
+    "chat_model": "qwen-plus-2025-07-28",
+    "n_questions": 50,
+    "started_at": "2026-06-26T01:32:21",
+    "updated_at": "2026-06-26T01:42:06",
+    "finished_at": "2026-06-26T01:42:07"
+  },
+  "runs": [
+    {
+      "query_id": 1475,
+      "run_id": "q1475_run1",
+      "run_idx": 1,
+      "question": "承运人是多式联运运，他把具体的货物运输分成很多区段运输了，把货物弄丢了，应该怎么要求赔偿？",
+      "gold_ids": [
+        376
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百三十九条"
+      ],
+      "sub_queries": [
+        "多式联运承运人货物丢失赔偿责任",
+        "区段运输中承运人责任划分",
+        "多式联运下货损赔偿请求权依据",
+        "货物丢失的赔偿范围与限额"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        376,
+        371,
+        40831,
+        1000,
+        366
+      ],
+      "latency_s": 24.584,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1475,
+      "run_id": "q1475_run2",
+      "run_idx": 2,
+      "question": "承运人是多式联运运，他把具体的货物运输分成很多区段运输了，把货物弄丢了，应该怎么要求赔偿？",
+      "gold_ids": [
+        376
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百三十九条"
+      ],
+      "sub_queries": [
+        "多式联运承运人货物丢失赔偿责任",
+        "区段运输中承运人责任划分",
+        "多式联运下全程运输赔偿标准",
+        "货物丢失的索赔对象与连带责任"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        376,
+        371,
+        11847
+      ],
+      "latency_s": 1.826,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1475,
+      "run_id": "q1475_run3",
+      "run_idx": 3,
+      "question": "承运人是多式联运运，他把具体的货物运输分成很多区段运输了，把货物弄丢了，应该怎么要求赔偿？",
+      "gold_ids": [
+        376
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百三十九条"
+      ],
+      "sub_queries": [
+        "多式联运承运人货物丢失赔偿责任",
+        "区段运输中承运人责任划分",
+        "多式联运下货损赔偿请求权依据",
+        "货物运输分段委托下的赔偿标准"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        371,
+        376,
+        40831,
+        366,
+        11847
+      ],
+      "latency_s": 0.923,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.5,
+      "ndcg@5": 0.6309,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.6309,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.6309
+      },
+      "error": null
+    },
+    {
+      "query_id": 454,
+      "run_id": "q454_run1",
+      "run_idx": 1,
+      "question": "病人在就诊人身体出现异常状况，医务人员对病人的生命与健康漠不关心、态度不端，不及时采取救治措施，导致病人死亡的，是否构成医疗事故罪？",
+      "gold_ids": [
+        55290,
+        55222
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第三百三十五条",
+        "中华人民共和国刑法第三百九十七条"
+      ],
+      "sub_queries": [
+        "医务人员漠视病人异常状况致死的构成要件",
+        "医疗事故罪的法律适用条件",
+        "医务人员严重不负责任的认定标准",
+        "医疗过失与死亡结果的因果关系"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55222,
+        1168,
+        47561,
+        10316
+      ],
+      "latency_s": 3.283,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 454,
+      "run_id": "q454_run2",
+      "run_idx": 2,
+      "question": "病人在就诊人身体出现异常状况，医务人员对病人的生命与健康漠不关心、态度不端，不及时采取救治措施，导致病人死亡的，是否构成医疗事故罪？",
+      "gold_ids": [
+        55290,
+        55222
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第三百三十五条",
+        "中华人民共和国刑法第三百九十七条"
+      ],
+      "sub_queries": [
+        "医疗事故罪构成要件",
+        "医务人员严重不负责任认定",
+        "就诊过程中未及时救治的法律后果",
+        "医疗过失与患者死亡因果关系"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55222,
+        7630,
+        10316,
+        1168,
+        55001
+      ],
+      "latency_s": 3.215,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 454,
+      "run_id": "q454_run3",
+      "run_idx": 3,
+      "question": "病人在就诊人身体出现异常状况，医务人员对病人的生命与健康漠不关心、态度不端，不及时采取救治措施，导致病人死亡的，是否构成医疗事故罪？",
+      "gold_ids": [
+        55290,
+        55222
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第三百三十五条",
+        "中华人民共和国刑法第三百九十七条"
+      ],
+      "sub_queries": [
+        "医疗事故罪构成要件 医务人员严重不负责任 导致病人死亡",
+        "医务人员未及时救治 是否属于严重不负责任行为",
+        "就诊过程中生命健康漠视 行为与死亡因果关系认定",
+        "医疗事故罪 刑事责任 追诉标准 医疗机构过错程度"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55222,
+        47561,
+        28429,
+        7630
+      ],
+      "latency_s": 3.637,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 1120,
+      "run_id": "q1120_run1",
+      "run_idx": 1,
+      "question": "隔壁装修有各种刺激性气味/垃圾有气味/生产有气味影响生活怎么办？",
+      "gold_ids": [
+        945
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第二百九十四条"
+      ],
+      "sub_queries": [
+        "相邻权受装修刺激性气味影响的法律救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        939,
+        23229,
+        25483,
+        1110,
+        24536
+      ],
+      "latency_s": 1.045,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1120,
+      "run_id": "q1120_run2",
+      "run_idx": 2,
+      "question": "隔壁装修有各种刺激性气味/垃圾有气味/生产有气味影响生活怎么办？",
+      "gold_ids": [
+        945
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第二百九十四条"
+      ],
+      "sub_queries": [
+        "装修污染刺激性气味影响生活如何维权"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        21636,
+        1183,
+        7515,
+        25483,
+        34392
+      ],
+      "latency_s": 0.943,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1120,
+      "run_id": "q1120_run3",
+      "run_idx": 3,
+      "question": "隔壁装修有各种刺激性气味/垃圾有气味/生产有气味影响生活怎么办？",
+      "gold_ids": [
+        945
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第二百九十四条"
+      ],
+      "sub_queries": [
+        "装修刺激性气味污染影响生活如何维权"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        21636,
+        1183,
+        7515,
+        34392,
+        25483
+      ],
+      "latency_s": 0.757,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1102,
+      "run_id": "q1102_run1",
+      "run_idx": 1,
+      "question": "盗窃和抢劫有什么区别？",
+      "gold_ids": [
+        55136,
+        55137
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第二百六十三条",
+        "中华人民共和国刑法第二百六十四条"
+      ],
+      "sub_queries": [
+        "盗窃罪构成要件",
+        "抢劫罪构成要件",
+        "盗窃与抢劫的法律区别",
+        "盗窃转化为抢劫的情形"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55142,
+        55136,
+        55137
+      ],
+      "latency_s": 3.562,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.5,
+      "ndcg@5": 0.6934,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.6934,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.6934
+      },
+      "error": null
+    },
+    {
+      "query_id": 1102,
+      "run_id": "q1102_run2",
+      "run_idx": 2,
+      "question": "盗窃和抢劫有什么区别？",
+      "gold_ids": [
+        55136,
+        55137
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第二百六十三条",
+        "中华人民共和国刑法第二百六十四条"
+      ],
+      "sub_queries": [
+        "盗窃罪构成要件",
+        "抢劫罪构成要件",
+        "盗窃与抢劫的法律区别",
+        "盗窃转化为抢劫的情形"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55142,
+        55136,
+        55137
+      ],
+      "latency_s": 0.001,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.5,
+      "ndcg@5": 0.6934,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.6934,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.6934
+      },
+      "error": null
+    },
+    {
+      "query_id": 1102,
+      "run_id": "q1102_run3",
+      "run_idx": 3,
+      "question": "盗窃和抢劫有什么区别？",
+      "gold_ids": [
+        55136,
+        55137
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第二百六十三条",
+        "中华人民共和国刑法第二百六十四条"
+      ],
+      "sub_queries": [
+        "盗窃罪构成要件",
+        "抢劫罪构成要件",
+        "盗窃与抢劫的法律区别",
+        "盗窃转化为抢劫的情形"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55142,
+        55136,
+        55137
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.5,
+      "ndcg@5": 0.6934,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.6934,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.6934
+      },
+      "error": null
+    },
+    {
+      "query_id": 398,
+      "run_id": "q398_run1",
+      "run_idx": 1,
+      "question": "用人单位在劳动合同中以“安全奖”约定扣发奖金，离职后如与用人单位无纠纷或无泄密则予以补发，是否有效？",
+      "gold_ids": [
+        14460,
+        14461
+      ],
+      "gold_names": [
+        "劳动合同法第二十六条",
+        "劳动合同法第二十七条"
+      ],
+      "sub_queries": [
+        "劳动合同中安全奖条款的法律效力认定",
+        "用人单位附条件扣发奖金的合法性",
+        "离职后补发奖金的约定是否构成不当限制",
+        "附无纠纷无泄密条件的奖金补发条款可撤销性"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        30100,
+        13645,
+        39894,
+        30112,
+        1004
+      ],
+      "latency_s": 3.526,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 398,
+      "run_id": "q398_run2",
+      "run_idx": 2,
+      "question": "用人单位在劳动合同中以“安全奖”约定扣发奖金，离职后如与用人单位无纠纷或无泄密则予以补发，是否有效？",
+      "gold_ids": [
+        14460,
+        14461
+      ],
+      "gold_names": [
+        "劳动合同法第二十六条",
+        "劳动合同法第二十七条"
+      ],
+      "sub_queries": [
+        "劳动合同中安全奖条款的法律效力认定",
+        "用人单位扣发安全奖的合法性要件",
+        "离职后补发奖金附条件是否违反劳动合同法",
+        "安全奖作为违约金变相形式的司法认定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        13645,
+        1001,
+        30112,
+        24939,
+        23652
+      ],
+      "latency_s": 2.486,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 398,
+      "run_id": "q398_run3",
+      "run_idx": 3,
+      "question": "用人单位在劳动合同中以“安全奖”约定扣发奖金，离职后如与用人单位无纠纷或无泄密则予以补发，是否有效？",
+      "gold_ids": [
+        14460,
+        14461
+      ],
+      "gold_names": [
+        "劳动合同法第二十六条",
+        "劳动合同法第二十七条"
+      ],
+      "sub_queries": [
+        "劳动合同中安全奖扣发条款的效力认定",
+        "离职后补发奖金的附条件约定合法性",
+        "用人单位限制劳动者权利的格式条款效力",
+        "保密义务与奖金支付的关联性法律依据"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        14457,
+        14460,
+        23292,
+        13645,
+        16196
+      ],
+      "latency_s": 3.405,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 0.5,
+      "ndcg@5": 0.3869,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.3869,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.3869
+      },
+      "error": null
+    },
+    {
+      "query_id": 787,
+      "run_id": "q787_run1",
+      "run_idx": 1,
+      "question": "对于政府的《补充告知书》我可以起诉吗？",
+      "gold_ids": [
+        22347
+      ],
+      "gold_names": [
+        "行政诉讼法第九十一条"
+      ],
+      "sub_queries": [
+        "对政府补充告知书提起诉讼的起诉资格和可诉性"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        27367,
+        21636,
+        22305,
+        21705,
+        21704
+      ],
+      "latency_s": 1.059,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 787,
+      "run_id": "q787_run2",
+      "run_idx": 2,
+      "question": "对于政府的《补充告知书》我可以起诉吗？",
+      "gold_ids": [
+        22347
+      ],
+      "gold_names": [
+        "行政诉讼法第九十一条"
+      ],
+      "sub_queries": [
+        "对政府补充告知书提起诉讼的起诉资格和可诉性"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        27367,
+        21636,
+        22305,
+        21705,
+        21704
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 787,
+      "run_id": "q787_run3",
+      "run_idx": 3,
+      "question": "对于政府的《补充告知书》我可以起诉吗？",
+      "gold_ids": [
+        22347
+      ],
+      "gold_names": [
+        "行政诉讼法第九十一条"
+      ],
+      "sub_queries": [
+        "对政府补充告知书提起诉讼的起诉资格和可诉性"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        27367,
+        21636,
+        22305,
+        21705,
+        21704
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 404,
+      "run_id": "q404_run1",
+      "run_idx": 1,
+      "question": "劳动者签署放弃诉权的协议，是否有效？",
+      "gold_ids": [
+        21704,
+        14460,
+        14461,
+        21591
+      ],
+      "gold_names": [
+        "民事诉讼法第十三条",
+        "民事诉讼法第一百二十六条",
+        "劳动合同法第二十六条",
+        "劳动合同法第二十七条"
+      ],
+      "sub_queries": [
+        "劳动者放弃诉权协议的法律效力"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        26989,
+        26477,
+        27370,
+        22823,
+        27706
+      ],
+      "latency_s": 0.866,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 4,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 404,
+      "run_id": "q404_run2",
+      "run_idx": 2,
+      "question": "劳动者签署放弃诉权的协议，是否有效？",
+      "gold_ids": [
+        21704,
+        14460,
+        14461,
+        21591
+      ],
+      "gold_names": [
+        "民事诉讼法第十三条",
+        "民事诉讼法第一百二十六条",
+        "劳动合同法第二十六条",
+        "劳动合同法第二十七条"
+      ],
+      "sub_queries": [
+        "劳动者放弃诉权协议的效力认定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        27370,
+        23321,
+        26989,
+        26477,
+        24226
+      ],
+      "latency_s": 0.772,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 4,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 404,
+      "run_id": "q404_run3",
+      "run_idx": 3,
+      "question": "劳动者签署放弃诉权的协议，是否有效？",
+      "gold_ids": [
+        21704,
+        14460,
+        14461,
+        21591
+      ],
+      "gold_names": [
+        "民事诉讼法第十三条",
+        "民事诉讼法第一百二十六条",
+        "劳动合同法第二十六条",
+        "劳动合同法第二十七条"
+      ],
+      "sub_queries": [
+        "劳动者放弃诉权协议的法律效力"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        26989,
+        26477,
+        27370,
+        22823,
+        27706
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 4,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 200,
+      "run_id": "q200_run1",
+      "run_idx": 1,
+      "question": "出入库手续一般如何规定？",
+      "gold_ids": [
+        445
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第九百零八条"
+      ],
+      "sub_queries": [
+        "出入库手续的法律规定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        445,
+        16085,
+        448,
+        4726,
+        455
+      ],
+      "latency_s": 0.943,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 200,
+      "run_id": "q200_run2",
+      "run_idx": 2,
+      "question": "出入库手续一般如何规定？",
+      "gold_ids": [
+        445
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第九百零八条"
+      ],
+      "sub_queries": [
+        "出入库手续的法律规定和程序要求"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        445,
+        16085,
+        4726,
+        7839,
+        448
+      ],
+      "latency_s": 0.91,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 200,
+      "run_id": "q200_run3",
+      "run_idx": 3,
+      "question": "出入库手续一般如何规定？",
+      "gold_ids": [
+        445
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第九百零八条"
+      ],
+      "sub_queries": [
+        "出入库手续的法律规定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        445,
+        16085,
+        448,
+        4726,
+        455
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 275,
+      "run_id": "q275_run1",
+      "run_idx": 1,
+      "question": "酒店对用餐者车辆的保管作出的用餐者的车辆必须听从保安人员的指挥停放，并办理保管手续，按规定交纳停车占地费，否则酒店对损失概不负责”的规定，酒店和用餐者之间是否成立保管合同关系？",
+      "gold_ids": [
+        427,
+        428
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百九十条",
+        "中华人民共和国民法典第八百九十一条"
+      ],
+      "sub_queries": [
+        "保管合同成立要件 用餐车辆 停车手续",
+        "酒店声明 免责条款 效力认定",
+        "车辆停放指挥 保管合意 表示行为",
+        "交纳停车费 保管合同 对价关系"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        427,
+        426,
+        428,
+        30529,
+        432
+      ],
+      "latency_s": 3.428,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9197,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "error": null
+    },
+    {
+      "query_id": 275,
+      "run_id": "q275_run2",
+      "run_idx": 2,
+      "question": "酒店对用餐者车辆的保管作出的用餐者的车辆必须听从保安人员的指挥停放，并办理保管手续，按规定交纳停车占地费，否则酒店对损失概不负责”的规定，酒店和用餐者之间是否成立保管合同关系？",
+      "gold_ids": [
+        427,
+        428
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百九十条",
+        "中华人民共和国民法典第八百九十一条"
+      ],
+      "sub_queries": [
+        "保管合同成立要件 用餐车辆 停车手续",
+        "酒店声明 免责条款 效力认定",
+        "车辆停放指挥 保管合意 表示行为",
+        "停车费性质 占地费 是否构成对价"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        427,
+        428,
+        30529,
+        36113,
+        432
+      ],
+      "latency_s": 0.73,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 275,
+      "run_id": "q275_run3",
+      "run_idx": 3,
+      "question": "酒店对用餐者车辆的保管作出的用餐者的车辆必须听从保安人员的指挥停放，并办理保管手续，按规定交纳停车占地费，否则酒店对损失概不负责”的规定，酒店和用餐者之间是否成立保管合同关系？",
+      "gold_ids": [
+        427,
+        428
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百九十条",
+        "中华人民共和国民法典第八百九十一条"
+      ],
+      "sub_queries": [
+        "保管合同成立要件 用餐车辆 停车手续",
+        "酒店声明 免责条款 效力认定",
+        "车辆停放指挥 保管合意 表示行为",
+        "交纳停车费 性质 是否构成保管对价"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        427,
+        426,
+        428,
+        30529,
+        440
+      ],
+      "latency_s": 0.934,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9197,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "error": null
+    },
+    {
+      "query_id": 243,
+      "run_id": "q243_run1",
+      "run_idx": 1,
+      "question": "在保理合同中，应收账款需要实际转让吗？",
+      "gold_ids": [
+        82,
+        83,
+        298,
+        85
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第五百四十五条",
+        "中华人民共和国民法典第五百四十六条",
+        "中华人民共和国民法典第五百四十八条",
+        "中华人民共和国民法典第七百六十一条"
+      ],
+      "sub_queries": [
+        "保理合同中应收账款是否需实际转让"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        298,
+        301,
+        299,
+        82,
+        83
+      ],
+      "latency_s": 0.913,
+      "hit@5": 1,
+      "recall@5": 0.75,
+      "mrr": 1.0,
+      "ndcg@5": 0.7095,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 4,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.25,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.25,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 0.75,
+        "ndcg@5": 0.7095
+      },
+      "error": null
+    },
+    {
+      "query_id": 243,
+      "run_id": "q243_run2",
+      "run_idx": 2,
+      "question": "在保理合同中，应收账款需要实际转让吗？",
+      "gold_ids": [
+        82,
+        83,
+        298,
+        85
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第五百四十五条",
+        "中华人民共和国民法典第五百四十六条",
+        "中华人民共和国民法典第五百四十八条",
+        "中华人民共和国民法典第七百六十一条"
+      ],
+      "sub_queries": [
+        "保理合同中应收账款是否需实际转让"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        298,
+        301,
+        299,
+        82,
+        83
+      ],
+      "latency_s": 0.001,
+      "hit@5": 1,
+      "recall@5": 0.75,
+      "mrr": 1.0,
+      "ndcg@5": 0.7095,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 4,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.25,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.25,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 0.75,
+        "ndcg@5": 0.7095
+      },
+      "error": null
+    },
+    {
+      "query_id": 243,
+      "run_id": "q243_run3",
+      "run_idx": 3,
+      "question": "在保理合同中，应收账款需要实际转让吗？",
+      "gold_ids": [
+        82,
+        83,
+        298,
+        85
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第五百四十五条",
+        "中华人民共和国民法典第五百四十六条",
+        "中华人民共和国民法典第五百四十八条",
+        "中华人民共和国民法典第七百六十一条"
+      ],
+      "sub_queries": [
+        "保理合同中应收账款是否需实际转让"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        298,
+        301,
+        299,
+        82,
+        83
+      ],
+      "latency_s": 0.001,
+      "hit@5": 1,
+      "recall@5": 0.75,
+      "mrr": 1.0,
+      "ndcg@5": 0.7095,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 4,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.25,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.25,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 0.75,
+        "ndcg@5": 0.7095
+      },
+      "error": null
+    },
+    {
+      "query_id": 346,
+      "run_id": "q346_run1",
+      "run_idx": 1,
+      "question": "环保公益组织能否跨地区进行公益诉讼？",
+      "gold_ids": [
+        7515,
+        21636
+      ],
+      "gold_names": [
+        "民事诉讼法第五十八条",
+        "环境保护法第五十八条"
+      ],
+      "sub_queries": [
+        "环保公益组织跨地区提起公益诉讼的资格条件"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        7515,
+        25465,
+        21636,
+        24533,
+        22305
+      ],
+      "latency_s": 0.866,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9197,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "error": null
+    },
+    {
+      "query_id": 346,
+      "run_id": "q346_run2",
+      "run_idx": 2,
+      "question": "环保公益组织能否跨地区进行公益诉讼？",
+      "gold_ids": [
+        7515,
+        21636
+      ],
+      "gold_names": [
+        "民事诉讼法第五十八条",
+        "环境保护法第五十八条"
+      ],
+      "sub_queries": [
+        "环保公益组织跨地区提起公益诉讼的资格条件"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        7515,
+        25465,
+        21636,
+        24533,
+        22305
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9197,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "error": null
+    },
+    {
+      "query_id": 346,
+      "run_id": "q346_run3",
+      "run_idx": 3,
+      "question": "环保公益组织能否跨地区进行公益诉讼？",
+      "gold_ids": [
+        7515,
+        21636
+      ],
+      "gold_names": [
+        "民事诉讼法第五十八条",
+        "环境保护法第五十八条"
+      ],
+      "sub_queries": [
+        "环保公益组织跨地区提起公益诉讼的资格条件"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        7515,
+        25465,
+        21636,
+        24533,
+        22305
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9197,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "error": null
+    },
+    {
+      "query_id": 945,
+      "run_id": "q945_run1",
+      "run_idx": 1,
+      "question": "偷拍、偷录获得的证据可以用来证明借贷关系存在吗？",
+      "gold_ids": [
+        23652
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民事诉讼法》的解释第一百零六条"
+      ],
+      "sub_queries": [
+        "偷拍偷录证据的合法性认定",
+        "视听资料作为借贷关系证据的可采性",
+        "非法取证对民事证据效力的影响",
+        "民间借贷纠纷中的举证责任分配"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        23652,
+        28855,
+        22005,
+        24492,
+        28156
+      ],
+      "latency_s": 3.351,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 945,
+      "run_id": "q945_run2",
+      "run_idx": 2,
+      "question": "偷拍、偷录获得的证据可以用来证明借贷关系存在吗？",
+      "gold_ids": [
+        23652
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民事诉讼法》的解释第一百零六条"
+      ],
+      "sub_queries": [
+        "偷拍偷录证据的合法性认定",
+        "非法证据排除规则适用情形",
+        "视听资料作为借贷关系证据的证明力",
+        "民事诉讼中举证责任与证据形式要求"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        26793,
+        21927,
+        23652,
+        23640,
+        28246
+      ],
+      "latency_s": 2.545,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.3333,
+      "ndcg@5": 0.5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.5,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.5
+      },
+      "error": null
+    },
+    {
+      "query_id": 945,
+      "run_id": "q945_run3",
+      "run_idx": 3,
+      "question": "偷拍、偷录获得的证据可以用来证明借贷关系存在吗？",
+      "gold_ids": [
+        23652
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民事诉讼法》的解释第一百零六条"
+      ],
+      "sub_queries": [
+        "偷拍偷录证据的合法性认定",
+        "视听资料作为借贷关系证据的可采性",
+        "非法获取证据在民事诉讼中的排除规则",
+        "民间借贷纠纷中的举证责任分配"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        26793,
+        26794,
+        23652,
+        22005,
+        24492
+      ],
+      "latency_s": 0.781,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.3333,
+      "ndcg@5": 0.5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.5,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.5
+      },
+      "error": null
+    },
+    {
+      "query_id": 54,
+      "run_id": "q54_run1",
+      "run_idx": 1,
+      "question": "产品侵权诉讼中由哪一方提供证据？",
+      "gold_ids": [
+        16818
+      ],
+      "gold_names": [
+        "产品质量法第四十一条"
+      ],
+      "sub_queries": [
+        "产品侵权诉讼中举证责任由哪一方承担"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        23083,
+        23539,
+        16818,
+        27952,
+        28156
+      ],
+      "latency_s": 0.836,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.3333,
+      "ndcg@5": 0.5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.5,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.5
+      },
+      "error": null
+    },
+    {
+      "query_id": 54,
+      "run_id": "q54_run2",
+      "run_idx": 2,
+      "question": "产品侵权诉讼中由哪一方提供证据？",
+      "gold_ids": [
+        16818
+      ],
+      "gold_names": [
+        "产品质量法第四十一条"
+      ],
+      "sub_queries": [
+        "产品侵权诉讼中举证责任由哪一方承担"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        23083,
+        23539,
+        16818,
+        27952,
+        28156
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.3333,
+      "ndcg@5": 0.5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.5,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.5
+      },
+      "error": null
+    },
+    {
+      "query_id": 54,
+      "run_id": "q54_run3",
+      "run_idx": 3,
+      "question": "产品侵权诉讼中由哪一方提供证据？",
+      "gold_ids": [
+        16818
+      ],
+      "gold_names": [
+        "产品质量法第四十一条"
+      ],
+      "sub_queries": [
+        "产品侵权诉讼中举证责任由哪一方承担"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        23083,
+        23539,
+        16818,
+        27952,
+        28156
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.3333,
+      "ndcg@5": 0.5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.5,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.5
+      },
+      "error": null
+    },
+    {
+      "query_id": 1304,
+      "run_id": "q1304_run1",
+      "run_idx": 1,
+      "question": "承租人将租赁物转让、抵押、质押、投资入股或者以其他方式处分，出租人怎么办？",
+      "gold_ids": [
+        290
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第七百五十三条"
+      ],
+      "sub_queries": [
+        "承租人擅自处分租赁物 出租人权利救济",
+        "租赁物转让抵押质押投资入股 法律效力",
+        "出租人 解除合同 损失赔偿 请求权基础",
+        "融资租赁合同 承租人违约 处分租赁物 责任后果"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [],
+      "latency_s": 22.747,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 0,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": "HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /compatible-mode/v1/embeddings (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000262B0E50620>, 'Connection to dashscope.aliyuncs.com timed out. (connect timeout=60)'))"
+    },
+    {
+      "query_id": 1304,
+      "run_id": "q1304_run2",
+      "run_idx": 2,
+      "question": "承租人将租赁物转让、抵押、质押、投资入股或者以其他方式处分，出租人怎么办？",
+      "gold_ids": [
+        290
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第七百五十三条"
+      ],
+      "sub_queries": [
+        "承租人擅自处分租赁物 出租人权利救济",
+        "租赁合同 出租人 对抗第三人 处分效力",
+        "承租人违约 转让抵押质押投资入股 租赁物",
+        "融资租赁 出租人所有权保护 途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        290,
+        23229,
+        297,
+        17985,
+        35500
+      ],
+      "latency_s": 2.367,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1304,
+      "run_id": "q1304_run3",
+      "run_idx": 3,
+      "question": "承租人将租赁物转让、抵押、质押、投资入股或者以其他方式处分，出租人怎么办？",
+      "gold_ids": [
+        290
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第七百五十三条"
+      ],
+      "sub_queries": [
+        "承租人擅自处分租赁物 出租人救济途径",
+        "租赁合同 出租人权利保护 责任承担",
+        "承租人违约 处分租赁物 民事责任",
+        "融资租赁 租赁物处分权 归属认定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        290,
+        297,
+        23229,
+        245,
+        11933
+      ],
+      "latency_s": 3.144,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1179,
+      "run_id": "q1179_run1",
+      "run_idx": 1,
+      "question": "子女是本村村民，已分户且有自己的宅基地的情况下，可以继承父母的宅基地吗？",
+      "gold_ids": [
+        5099
+      ],
+      "gold_names": [
+        "土地管理法第六十二条"
+      ],
+      "sub_queries": [
+        "本村村民分户后继承父母宅基地的法律依据",
+        "宅基地使用权继承的构成要件",
+        "农村宅基地继承与集体经济组织成员资格的关系",
+        "已拥有宅基地是否影响继承权"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1013,
+        609,
+        5099,
+        1016,
+        11108
+      ],
+      "latency_s": 3.667,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.3333,
+      "ndcg@5": 0.5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.5,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.5
+      },
+      "error": null
+    },
+    {
+      "query_id": 1179,
+      "run_id": "q1179_run2",
+      "run_idx": 2,
+      "question": "子女是本村村民，已分户且有自己的宅基地的情况下，可以继承父母的宅基地吗？",
+      "gold_ids": [
+        5099
+      ],
+      "gold_names": [
+        "土地管理法第六十二条"
+      ],
+      "sub_queries": [
+        "本村村民分户后继承父母宅基地的法律依据",
+        "宅基地使用权继承的构成要件",
+        "农村宅基地继承与集体经济组织成员资格的关系",
+        "已拥有宅基地是否影响继承权"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1013,
+        609,
+        5099,
+        1016,
+        11108
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.3333,
+      "ndcg@5": 0.5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.5,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.5
+      },
+      "error": null
+    },
+    {
+      "query_id": 1179,
+      "run_id": "q1179_run3",
+      "run_idx": 3,
+      "question": "子女是本村村民，已分户且有自己的宅基地的情况下，可以继承父母的宅基地吗？",
+      "gold_ids": [
+        5099
+      ],
+      "gold_names": [
+        "土地管理法第六十二条"
+      ],
+      "sub_queries": [
+        "本村村民分户后继承父母宅基地的法律资格",
+        "宅基地使用权继承与集体经济组织成员身份关系",
+        "已拥有宅基地是否影响继承父母宅基地权益",
+        "宅基地上房屋继承对宅基地使用权的影响"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1016,
+        1013,
+        5099,
+        609,
+        24562
+      ],
+      "latency_s": 3.254,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.3333,
+      "ndcg@5": 0.5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.5,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.5
+      },
+      "error": null
+    },
+    {
+      "query_id": 43,
+      "run_id": "q43_run1",
+      "run_idx": 1,
+      "question": "村民落户其他村组织，但未书面放弃的，仍继续享有土地承包经营权吗？",
+      "gold_ids": [
+        11084,
+        11087
+      ],
+      "gold_names": [
+        "农村土地承包法第二十七条",
+        "农村土地承包法第三十条"
+      ],
+      "sub_queries": [
+        "村民落户其他村组织后土地承包经营权是否自动丧失",
+        "未书面放弃土地承包经营权能否继续享有",
+        "土地承包经营权保留的法定条件与程序",
+        "集体经济组织成员资格变动对承包权的影响"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        11084,
+        30894,
+        11108,
+        11090,
+        11087
+      ],
+      "latency_s": 4.158,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.8503,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8503
+      },
+      "error": null
+    },
+    {
+      "query_id": 43,
+      "run_id": "q43_run2",
+      "run_idx": 2,
+      "question": "村民落户其他村组织，但未书面放弃的，仍继续享有土地承包经营权吗？",
+      "gold_ids": [
+        11084,
+        11087
+      ],
+      "gold_names": [
+        "农村土地承包法第二十七条",
+        "农村土地承包法第三十条"
+      ],
+      "sub_queries": [
+        "村民落户其他村组织后土地承包经营权是否自动丧失",
+        "未书面放弃土地承包经营权的法律效力",
+        "土地承包经营权保留的法定条件与程序",
+        "集体经济组织成员资格变动对承包权的影响"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        11084,
+        30894,
+        11108,
+        11090,
+        11087
+      ],
+      "latency_s": 0.936,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.8503,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8503
+      },
+      "error": null
+    },
+    {
+      "query_id": 43,
+      "run_id": "q43_run3",
+      "run_idx": 3,
+      "question": "村民落户其他村组织，但未书面放弃的，仍继续享有土地承包经营权吗？",
+      "gold_ids": [
+        11084,
+        11087
+      ],
+      "gold_names": [
+        "农村土地承包法第二十七条",
+        "农村土地承包法第三十条"
+      ],
+      "sub_queries": [
+        "村民落户其他村组织后土地承包经营权是否自动丧失",
+        "未书面放弃土地承包经营权的法律效力",
+        "土地承包经营权保留的法定条件与程序",
+        "集体经济组织成员资格变动对承包权的影响"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        11084,
+        30894,
+        11108,
+        11090,
+        11087
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.8503,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8503
+      },
+      "error": null
+    },
+    {
+      "query_id": 695,
+      "run_id": "q695_run1",
+      "run_idx": 1,
+      "question": "承揽人不能在合同约定期间内交付工作成果的需要承担什么责任？",
+      "gold_ids": [
+        114,
+        317
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第五百七十七条",
+        "中华人民共和国民法典第七百八十条"
+      ],
+      "sub_queries": [
+        "承揽人未按期交付工作成果的违约责任"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        421,
+        324,
+        1000,
+        393,
+        114
+      ],
+      "latency_s": 0.808,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 0.2,
+      "ndcg@5": 0.2372,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.2,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.2372
+      },
+      "error": null
+    },
+    {
+      "query_id": 695,
+      "run_id": "q695_run2",
+      "run_idx": 2,
+      "question": "承揽人不能在合同约定期间内交付工作成果的需要承担什么责任？",
+      "gold_ids": [
+        114,
+        317
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第五百七十七条",
+        "中华人民共和国民法典第七百八十条"
+      ],
+      "sub_queries": [
+        "承揽人未按期交付工作成果的违约责任"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        421,
+        324,
+        1000,
+        393,
+        114
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 0.2,
+      "ndcg@5": 0.2372,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.2,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.2372
+      },
+      "error": null
+    },
+    {
+      "query_id": 695,
+      "run_id": "q695_run3",
+      "run_idx": 3,
+      "question": "承揽人不能在合同约定期间内交付工作成果的需要承担什么责任？",
+      "gold_ids": [
+        114,
+        317
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第五百七十七条",
+        "中华人民共和国民法典第七百八十条"
+      ],
+      "sub_queries": [
+        "承揽人未按期交付工作成果的违约责任"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        421,
+        324,
+        1000,
+        393,
+        114
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 0.2,
+      "ndcg@5": 0.2372,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.2,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.2372
+      },
+      "error": null
+    },
+    {
+      "query_id": 52,
+      "run_id": "q52_run1",
+      "run_idx": 1,
+      "question": "产品投入流通后发现存在缺陷的，生产者、销售者应当采取哪些补救措施？",
+      "gold_ids": [
+        1156
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百零六条"
+      ],
+      "sub_queries": [
+        "产品投入流通后发现缺陷 生产者销售者 补救措施"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1156,
+        16818,
+        52856,
+        16793,
+        16784
+      ],
+      "latency_s": 0.755,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 52,
+      "run_id": "q52_run2",
+      "run_idx": 2,
+      "question": "产品投入流通后发现存在缺陷的，生产者、销售者应当采取哪些补救措施？",
+      "gold_ids": [
+        1156
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百零六条"
+      ],
+      "sub_queries": [
+        "产品投入流通后发现缺陷 生产者销售者补救措施"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1156,
+        16818,
+        52856,
+        16793,
+        16784
+      ],
+      "latency_s": 0.918,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 52,
+      "run_id": "q52_run3",
+      "run_idx": 3,
+      "question": "产品投入流通后发现存在缺陷的，生产者、销售者应当采取哪些补救措施？",
+      "gold_ids": [
+        1156
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百零六条"
+      ],
+      "sub_queries": [
+        "产品投入流通后发现缺陷 生产者销售者补救措施"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1156,
+        16818,
+        52856,
+        16793,
+        16784
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1218,
+      "run_id": "q1218_run1",
+      "run_idx": 1,
+      "question": "合同成立时一年期贷款市场报价利率四倍适用于网络贷款吗？",
+      "gold_ids": [
+        25375
+      ],
+      "gold_names": [
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第二十五条"
+      ],
+      "sub_queries": [
+        "合同成立时一年期贷款市场报价利率四倍是否适用于网络贷款"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        25375,
+        25351,
+        24165,
+        5688,
+        26617
+      ],
+      "latency_s": 0.864,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1218,
+      "run_id": "q1218_run2",
+      "run_idx": 2,
+      "question": "合同成立时一年期贷款市场报价利率四倍适用于网络贷款吗？",
+      "gold_ids": [
+        25375
+      ],
+      "gold_names": [
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第二十五条"
+      ],
+      "sub_queries": [
+        "合同成立时一年期贷款市场报价利率四倍是否适用于网络贷款"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        25375,
+        25351,
+        24165,
+        5688,
+        26617
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1218,
+      "run_id": "q1218_run3",
+      "run_idx": 3,
+      "question": "合同成立时一年期贷款市场报价利率四倍适用于网络贷款吗？",
+      "gold_ids": [
+        25375
+      ],
+      "gold_names": [
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第二十五条"
+      ],
+      "sub_queries": [
+        "合同成立时一年期贷款市场报价利率四倍是否适用于网络贷款"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        25375,
+        25351,
+        24165,
+        5688,
+        26617
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 770,
+      "run_id": "q770_run1",
+      "run_idx": 1,
+      "question": "有价证券如何设立质权？",
+      "gold_ids": [
+        1092,
+        30174,
+        30175
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第五十八条",
+        "最高人民法院关于适用《民法典》有关担保制度的解释第五十九条",
+        "中华人民共和国民法典第四百四十一条"
+      ],
+      "sub_queries": [
+        "有价证券质权设立条件"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1092,
+        30174,
+        1078,
+        1094,
+        27515
+      ],
+      "latency_s": 0.769,
+      "hit@5": 1,
+      "recall@5": 0.6667,
+      "mrr": 1.0,
+      "ndcg@5": 0.7654,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 0.6667,
+        "ndcg@5": 0.7654
+      },
+      "error": null
+    },
+    {
+      "query_id": 770,
+      "run_id": "q770_run2",
+      "run_idx": 2,
+      "question": "有价证券如何设立质权？",
+      "gold_ids": [
+        1092,
+        30174,
+        30175
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第五十八条",
+        "最高人民法院关于适用《民法典》有关担保制度的解释第五十九条",
+        "中华人民共和国民法典第四百四十一条"
+      ],
+      "sub_queries": [
+        "有价证券质权设立条件"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1092,
+        30174,
+        1078,
+        1094,
+        27515
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 0.6667,
+      "mrr": 1.0,
+      "ndcg@5": 0.7654,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 0.6667,
+        "ndcg@5": 0.7654
+      },
+      "error": null
+    },
+    {
+      "query_id": 770,
+      "run_id": "q770_run3",
+      "run_idx": 3,
+      "question": "有价证券如何设立质权？",
+      "gold_ids": [
+        1092,
+        30174,
+        30175
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第五十八条",
+        "最高人民法院关于适用《民法典》有关担保制度的解释第五十九条",
+        "中华人民共和国民法典第四百四十一条"
+      ],
+      "sub_queries": [
+        "有价证券质权设立条件"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1092,
+        30174,
+        1078,
+        1094,
+        27515
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 0.6667,
+      "mrr": 1.0,
+      "ndcg@5": 0.7654,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 0.6667,
+        "ndcg@5": 0.7654
+      },
+      "error": null
+    },
+    {
+      "query_id": 185,
+      "run_id": "q185_run1",
+      "run_idx": 1,
+      "question": "存货人未按照约定支付仓储费或者其他费用的怎么办？",
+      "gold_ids": [
+        440,
+        455
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第九百零三条",
+        "中华人民共和国民法典第九百一十八条"
+      ],
+      "sub_queries": [
+        "存货人未支付仓储费的法律救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        440,
+        373,
+        25288,
+        426,
+        448
+      ],
+      "latency_s": 0.754,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 185,
+      "run_id": "q185_run2",
+      "run_idx": 2,
+      "question": "存货人未按照约定支付仓储费或者其他费用的怎么办？",
+      "gold_ids": [
+        440,
+        455
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第九百零三条",
+        "中华人民共和国民法典第九百一十八条"
+      ],
+      "sub_queries": [
+        "存货人未支付仓储费的法律后果"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        440,
+        426,
+        11233,
+        373,
+        16838
+      ],
+      "latency_s": 0.943,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 185,
+      "run_id": "q185_run3",
+      "run_idx": 3,
+      "question": "存货人未按照约定支付仓储费或者其他费用的怎么办？",
+      "gold_ids": [
+        440,
+        455
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第九百零三条",
+        "中华人民共和国民法典第九百一十八条"
+      ],
+      "sub_queries": [
+        "存货人未支付仓储费的法律救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        440,
+        373,
+        25288,
+        426,
+        448
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 128,
+      "run_id": "q128_run1",
+      "run_idx": 1,
+      "question": "新闻报道严重失实，报道人是否承担侵权责任？",
+      "gold_ids": [
+        1248,
+        1245,
+        1246
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千零二十五条",
+        "中华人民共和国民法典第一千零二十六条",
+        "中华人民共和国民法典第一千零二十八条"
+      ],
+      "sub_queries": [
+        "新闻报道严重失实的侵权构成要件",
+        "报道人是否属于职务行为的责任归属",
+        "媒体或记者侵权责任的抗辩事由",
+        "侵害名誉权的民事责任与赔偿范围"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1245,
+        1248,
+        1247,
+        24609,
+        5200
+      ],
+      "latency_s": 3.287,
+      "hit@5": 1,
+      "recall@5": 0.6667,
+      "mrr": 1.0,
+      "ndcg@5": 0.7654,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 0.6667,
+        "ndcg@5": 0.7654
+      },
+      "error": null
+    },
+    {
+      "query_id": 128,
+      "run_id": "q128_run2",
+      "run_idx": 2,
+      "question": "新闻报道严重失实，报道人是否承担侵权责任？",
+      "gold_ids": [
+        1248,
+        1245,
+        1246
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千零二十五条",
+        "中华人民共和国民法典第一千零二十六条",
+        "中华人民共和国民法典第一千零二十八条"
+      ],
+      "sub_queries": [
+        "新闻报道严重失实的侵权责任构成要件",
+        "媒体报道侵权的过错认定标准",
+        "新闻报道侵权的抗辩事由如真实性抗辩",
+        "公众人物对失实报道侵权的责任影响"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1248,
+        1245,
+        1123
+      ],
+      "latency_s": 3.377,
+      "hit@5": 1,
+      "recall@5": 0.6667,
+      "mrr": 1.0,
+      "ndcg@5": 0.7654,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 0.6667,
+        "ndcg@5": 0.7654
+      },
+      "error": null
+    },
+    {
+      "query_id": 128,
+      "run_id": "q128_run3",
+      "run_idx": 3,
+      "question": "新闻报道严重失实，报道人是否承担侵权责任？",
+      "gold_ids": [
+        1248,
+        1245,
+        1246
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千零二十五条",
+        "中华人民共和国民法典第一千零二十六条",
+        "中华人民共和国民法典第一千零二十八条"
+      ],
+      "sub_queries": [
+        "新闻报道严重失实的侵权构成要件",
+        "报道人作为新闻主体的法律责任认定",
+        "侵害名誉权的抗辩事由与过错认定",
+        "媒体侵权责任的民事救济与赔偿范围"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1248,
+        1245,
+        25202
+      ],
+      "latency_s": 2.646,
+      "hit@5": 1,
+      "recall@5": 0.6667,
+      "mrr": 1.0,
+      "ndcg@5": 0.7654,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 0.6667,
+        "ndcg@5": 0.7654
+      },
+      "error": null
+    },
+    {
+      "query_id": 1245,
+      "run_id": "q1245_run1",
+      "run_idx": 1,
+      "question": "翻拍平面艺术作品能形成拍摄作品吗？",
+      "gold_ids": [
+        12488,
+        34905
+      ],
+      "gold_names": [
+        "著作权法第三条",
+        "著作权法实施条例第四条"
+      ],
+      "sub_queries": [
+        "翻拍平面艺术作品是否构成拍摄作品"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        34903,
+        12488,
+        42750,
+        52800,
+        34925
+      ],
+      "latency_s": 0.76,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 0.5,
+      "ndcg@5": 0.3869,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.3869,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.3869
+      },
+      "error": null
+    },
+    {
+      "query_id": 1245,
+      "run_id": "q1245_run2",
+      "run_idx": 2,
+      "question": "翻拍平面艺术作品能形成拍摄作品吗？",
+      "gold_ids": [
+        12488,
+        34905
+      ],
+      "gold_names": [
+        "著作权法第三条",
+        "著作权法实施条例第四条"
+      ],
+      "sub_queries": [
+        "翻拍平面艺术作品是否构成拍摄作品"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        34903,
+        12488,
+        42750,
+        52800,
+        34925
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 0.5,
+      "ndcg@5": 0.3869,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.3869,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.3869
+      },
+      "error": null
+    },
+    {
+      "query_id": 1245,
+      "run_id": "q1245_run3",
+      "run_idx": 3,
+      "question": "翻拍平面艺术作品能形成拍摄作品吗？",
+      "gold_ids": [
+        12488,
+        34905
+      ],
+      "gold_names": [
+        "著作权法第三条",
+        "著作权法实施条例第四条"
+      ],
+      "sub_queries": [
+        "翻拍平面艺术作品是否构成拍摄作品"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        34903,
+        12488,
+        42750,
+        52800,
+        34925
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 0.5,
+      "ndcg@5": 0.3869,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.3869,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.3869
+      },
+      "error": null
+    },
+    {
+      "query_id": 566,
+      "run_id": "q566_run1",
+      "run_idx": 1,
+      "question": "我明明和邻居约定了他可以来我这引水用，找他要一定报酬都不给，该怎么办？",
+      "gold_ids": [
+        1024,
+        1023
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第三百七十二条",
+        "中华人民共和国民法典第三百七十三条"
+      ],
+      "sub_queries": [
+        "约定引水使用但未支付报酬的法律救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        421,
+        17393,
+        28489,
+        344,
+        383
+      ],
+      "latency_s": 0.898,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 566,
+      "run_id": "q566_run2",
+      "run_idx": 2,
+      "question": "我明明和邻居约定了他可以来我这引水用，找他要一定报酬都不给，该怎么办？",
+      "gold_ids": [
+        1024,
+        1023
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第三百七十二条",
+        "中华人民共和国民法典第三百七十三条"
+      ],
+      "sub_queries": [
+        "约定引水使用但邻居拒付报酬的法律救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        17393,
+        421,
+        53523,
+        344,
+        40860
+      ],
+      "latency_s": 0.767,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 566,
+      "run_id": "q566_run3",
+      "run_idx": 3,
+      "question": "我明明和邻居约定了他可以来我这引水用，找他要一定报酬都不给，该怎么办？",
+      "gold_ids": [
+        1024,
+        1023
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第三百七十二条",
+        "中华人民共和国民法典第三百七十三条"
+      ],
+      "sub_queries": [
+        "约定引水使用但未支付报酬的法律救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        421,
+        17393,
+        28489,
+        344,
+        383
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 353,
+      "run_id": "q353_run1",
+      "run_idx": 1,
+      "question": "我被动物咬伤了，应该找谁承担责任？",
+      "gold_ids": [
+        1195
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百四十五条"
+      ],
+      "sub_queries": [
+        "动物咬伤受害人责任主体认定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1195,
+        1200,
+        1218,
+        1149,
+        6559
+      ],
+      "latency_s": 0.804,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 353,
+      "run_id": "q353_run2",
+      "run_idx": 2,
+      "question": "我被动物咬伤了，应该找谁承担责任？",
+      "gold_ids": [
+        1195
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百四十五条"
+      ],
+      "sub_queries": [
+        "被动物咬伤由谁承担侵权责任"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1195,
+        1200,
+        1149,
+        1138,
+        1186
+      ],
+      "latency_s": 0.802,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 353,
+      "run_id": "q353_run3",
+      "run_idx": 3,
+      "question": "我被动物咬伤了，应该找谁承担责任？",
+      "gold_ids": [
+        1195
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百四十五条"
+      ],
+      "sub_queries": [
+        "动物咬伤受害人责任主体认定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1195,
+        1200,
+        1218,
+        1149,
+        6559
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 303,
+      "run_id": "q303_run1",
+      "run_idx": 1,
+      "question": "同一债务上有多个保证人，履行保证义务的保证人是否可以向其他未履行保证义务的保证人追偿？",
+      "gold_ids": [
+        30129
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第十三条"
+      ],
+      "sub_queries": [
+        "同一债务多个保证人追偿权法律依据",
+        "保证人履行后对其他保证人追偿要件",
+        "连带共同保证人之间追偿规则",
+        "保证人代为履行后内部责任分担"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        30129,
+        230,
+        19878,
+        61
+      ],
+      "latency_s": 3.296,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 303,
+      "run_id": "q303_run2",
+      "run_idx": 2,
+      "question": "同一债务上有多个保证人，履行保证义务的保证人是否可以向其他未履行保证义务的保证人追偿？",
+      "gold_ids": [
+        30129
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第十三条"
+      ],
+      "sub_queries": [
+        "同一债务多个保证人追偿权法律依据",
+        "保证人履行后对其他保证人追偿要件",
+        "连带共同保证人之间追偿规则",
+        "保证人追偿权是否受债权人分配影响"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        30129,
+        230,
+        30139,
+        19878
+      ],
+      "latency_s": 1.009,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 303,
+      "run_id": "q303_run3",
+      "run_idx": 3,
+      "question": "同一债务上有多个保证人，履行保证义务的保证人是否可以向其他未履行保证义务的保证人追偿？",
+      "gold_ids": [
+        30129
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第十三条"
+      ],
+      "sub_queries": [
+        "同一债务多个保证人追偿权法律依据",
+        "履行保证义务后向其他保证人追偿的构成要件",
+        "连带共同保证人之间的追偿责任范围",
+        "保证人追偿权行使的程序与限制"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        30129,
+        30147,
+        30139,
+        19878,
+        230
+      ],
+      "latency_s": 2.628,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 292,
+      "run_id": "q292_run1",
+      "run_idx": 1,
+      "question": "债权人如何要求保证人承担其保证责任？",
+      "gold_ids": [
+        30147,
+        230
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百九十三条",
+        "最高人民法院关于适用《民法典》有关担保制度的解释第三十一条"
+      ],
+      "sub_queries": [
+        "债权人主张保证责任的构成要件",
+        "保证责任的类型与法律依据",
+        "债权人请求保证人承担责任的程序途径",
+        "保证期间与诉讼时效对权利行使的影响"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        231,
+        30147,
+        230,
+        30139
+      ],
+      "latency_s": 3.465,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 0.5,
+      "ndcg@5": 0.6934,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.6934,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.6934
+      },
+      "error": null
+    },
+    {
+      "query_id": 292,
+      "run_id": "q292_run2",
+      "run_idx": 2,
+      "question": "债权人如何要求保证人承担其保证责任？",
+      "gold_ids": [
+        30147,
+        230
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百九十三条",
+        "最高人民法院关于适用《民法典》有关担保制度的解释第三十一条"
+      ],
+      "sub_queries": [
+        "债权人请求保证人承担保证责任的条件和方式"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        230,
+        231,
+        30150,
+        30147,
+        30139
+      ],
+      "latency_s": 0.952,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.8772,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8772
+      },
+      "error": null
+    },
+    {
+      "query_id": 292,
+      "run_id": "q292_run3",
+      "run_idx": 3,
+      "question": "债权人如何要求保证人承担其保证责任？",
+      "gold_ids": [
+        30147,
+        230
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百九十三条",
+        "最高人民法院关于适用《民法典》有关担保制度的解释第三十一条"
+      ],
+      "sub_queries": [
+        "债权人请求保证人承担保证责任的条件和方式"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        230,
+        231,
+        30150,
+        30147,
+        30139
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.8772,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8772
+      },
+      "error": null
+    },
+    {
+      "query_id": 1450,
+      "run_id": "q1450_run1",
+      "run_idx": 1,
+      "question": "乘坐高铁，发现自己的位置被别人霸占了，这是可以的吗？",
+      "gold_ids": [
+        352
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百一十五条"
+      ],
+      "sub_queries": [
+        "高铁占座行为是否违法"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        16009,
+        46756,
+        46712,
+        46759,
+        54471
+      ],
+      "latency_s": 0.803,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1450,
+      "run_id": "q1450_run2",
+      "run_idx": 2,
+      "question": "乘坐高铁，发现自己的位置被别人霸占了，这是可以的吗？",
+      "gold_ids": [
+        352
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百一十五条"
+      ],
+      "sub_queries": [
+        "高铁占座行为是否违法"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        16009,
+        46756,
+        46712,
+        46759,
+        54471
+      ],
+      "latency_s": 0.001,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1450,
+      "run_id": "q1450_run3",
+      "run_idx": 3,
+      "question": "乘坐高铁，发现自己的位置被别人霸占了，这是可以的吗？",
+      "gold_ids": [
+        352
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百一十五条"
+      ],
+      "sub_queries": [
+        "高铁占座行为是否违法"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        16009,
+        46756,
+        46712,
+        46759,
+        54471
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1381,
+      "run_id": "q1381_run1",
+      "run_idx": 1,
+      "question": "以虚假票据或者其他虚假的产权证明作担保签订借款合同，是否构成合同诈骗罪？",
+      "gold_ids": [
+        55090
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第二百二十四条"
+      ],
+      "sub_queries": [
+        "虚假票据作担保签订借款合同的构成要件",
+        "合同诈骗罪中虚构担保的适用法律依据",
+        "以虚假产权证明骗取借款的责任后果",
+        "合同诈骗罪中非法占有目的的认定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55090,
+        34022,
+        31760,
+        28293,
+        1039
+      ],
+      "latency_s": 3.358,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1381,
+      "run_id": "q1381_run2",
+      "run_idx": 2,
+      "question": "以虚假票据或者其他虚假的产权证明作担保签订借款合同，是否构成合同诈骗罪？",
+      "gold_ids": [
+        55090
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第二百二十四条"
+      ],
+      "sub_queries": [
+        "虚假产权证明作担保签订借款合同的构成要件",
+        "合同诈骗罪中虚构担保物的适用法律依据",
+        "以虚假票据作担保的刑事责任认定",
+        "虚假担保型合同诈骗的抗辩与例外情形"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55090,
+        27634,
+        34022,
+        18121,
+        23010
+      ],
+      "latency_s": 3.381,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1381,
+      "run_id": "q1381_run3",
+      "run_idx": 3,
+      "question": "以虚假票据或者其他虚假的产权证明作担保签订借款合同，是否构成合同诈骗罪？",
+      "gold_ids": [
+        55090
+      ],
+      "gold_names": [
+        "中华人民共和国刑法第二百二十四条"
+      ],
+      "sub_queries": [
+        "虚假产权证明作担保签订借款合同的构成要件",
+        "合同诈骗罪中虚构担保物的适用法律依据",
+        "以虚假票据作担保的刑事责任认定",
+        "虚假担保型合同诈骗的抗辩与例外情形"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        55090,
+        27634,
+        34022,
+        18121,
+        23010
+      ],
+      "latency_s": 0.001,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1277,
+      "run_id": "q1277_run1",
+      "run_idx": 1,
+      "question": "平台用户侵权，平台是否需要承担责任吗？",
+      "gold_ids": [
+        1119
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百六十九条"
+      ],
+      "sub_queries": [
+        "平台用户侵权行为构成要件",
+        "平台是否承担连带责任的法律依据",
+        "平台过错与侵权责任认定",
+        "避风港原则适用情形"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        23397,
+        23396,
+        1123,
+        1203,
+        36501
+      ],
+      "latency_s": 3.28,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1277,
+      "run_id": "q1277_run2",
+      "run_idx": 2,
+      "question": "平台用户侵权，平台是否需要承担责任吗？",
+      "gold_ids": [
+        1119
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百六十九条"
+      ],
+      "sub_queries": [
+        "平台用户侵权行为构成要件",
+        "平台是否承担连带责任的法律依据",
+        "平台过错与侵权责任认定",
+        "避风港原则适用情形"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        23397,
+        23396,
+        1123,
+        1203,
+        36501
+      ],
+      "latency_s": 0.001,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1277,
+      "run_id": "q1277_run3",
+      "run_idx": 3,
+      "question": "平台用户侵权，平台是否需要承担责任吗？",
+      "gold_ids": [
+        1119
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百六十九条"
+      ],
+      "sub_queries": [
+        "平台用户侵权行为构成要件",
+        "平台是否承担连带责任的法律依据",
+        "平台过错与侵权责任认定",
+        "避风港原则适用情形"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        23397,
+        23396,
+        1123,
+        1203,
+        36501
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1507,
+      "run_id": "q1507_run1",
+      "run_idx": 1,
+      "question": "借款人未按约定使用借款，贷款人如何救济？",
+      "gold_ids": [
+        210
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百七十三条"
+      ],
+      "sub_queries": [
+        "借款人未按约定用途使用借款的违约认定",
+        "贷款人解除借款合同的法定条件",
+        "贷款人提前收回借款的法律依据",
+        "贷款人主张违约责任的救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        210,
+        114,
+        522,
+        1004,
+        60
+      ],
+      "latency_s": 3.19,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1507,
+      "run_id": "q1507_run2",
+      "run_idx": 2,
+      "question": "借款人未按约定使用借款，贷款人如何救济？",
+      "gold_ids": [
+        210
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百七十三条"
+      ],
+      "sub_queries": [
+        "借款人未按约定用途使用借款的违约认定",
+        "贷款人解除借款合同的法定条件",
+        "贷款人提前收回借款的法律依据",
+        "贷款人主张违约责任的救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        210,
+        114,
+        522,
+        1004,
+        60
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1507,
+      "run_id": "q1507_run3",
+      "run_idx": 3,
+      "question": "借款人未按约定使用借款，贷款人如何救济？",
+      "gold_ids": [
+        210
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百七十三条"
+      ],
+      "sub_queries": [
+        "借款人未按约定用途使用借款的违约认定",
+        "贷款人解除借款合同的法定条件",
+        "贷款人提前收回借款的法律依据",
+        "贷款人主张违约责任的救济途径"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        210,
+        114,
+        522,
+        1004,
+        60
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1351,
+      "run_id": "q1351_run1",
+      "run_idx": 1,
+      "question": "取得驾驶证是否属于行政许可？不同驾驶证属于一个行政许可还是多个行政许可？发生交通事故后，公安机关能否吊销全部驾驶证件？",
+      "gold_ids": [
+        4460
+      ],
+      "gold_names": [
+        "行政许可法第五十四条"
+      ],
+      "sub_queries": [
+        "取得驾驶证是否属于行政许可",
+        "不同类型的驾驶证是否构成多个行政许可",
+        "交通事故后公安机关能否吊销全部驾驶证件"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 3,
+      "retrieved_ids": [
+        48539,
+        8022,
+        19497,
+        49291,
+        19594
+      ],
+      "latency_s": 2.476,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1351,
+      "run_id": "q1351_run2",
+      "run_idx": 2,
+      "question": "取得驾驶证是否属于行政许可？不同驾驶证属于一个行政许可还是多个行政许可？发生交通事故后，公安机关能否吊销全部驾驶证件？",
+      "gold_ids": [
+        4460
+      ],
+      "gold_names": [
+        "行政许可法第五十四条"
+      ],
+      "sub_queries": [
+        "取得驾驶证是否属于行政许可的法律性质",
+        "不同类别的驾驶证是否构成多个行政许可",
+        "交通事故后吊销全部驾驶证件的合法性依据"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 3,
+      "retrieved_ids": [
+        48539,
+        19505,
+        49291,
+        22866,
+        19497
+      ],
+      "latency_s": 2.573,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1351,
+      "run_id": "q1351_run3",
+      "run_idx": 3,
+      "question": "取得驾驶证是否属于行政许可？不同驾驶证属于一个行政许可还是多个行政许可？发生交通事故后，公安机关能否吊销全部驾驶证件？",
+      "gold_ids": [
+        4460
+      ],
+      "gold_names": [
+        "行政许可法第五十四条"
+      ],
+      "sub_queries": [
+        "取得驾驶证是否属于行政许可",
+        "不同类型的驾驶证是否分别构成独立行政许可",
+        "发生交通事故后公安机关吊销全部驾驶证件的法律依据"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 3,
+      "retrieved_ids": [
+        48539,
+        8022,
+        19497,
+        49291,
+        19594
+      ],
+      "latency_s": 1.863,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1515,
+      "run_id": "q1515_run1",
+      "run_idx": 1,
+      "question": "名义借款人与实际用款人并非同一人，借款合同关系的主体应如何认定？",
+      "gold_ids": [
+        2
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百六十五条"
+      ],
+      "sub_queries": [
+        "名义借款人与实际用款人不一致时借款合同主体认定",
+        "借款合同关系成立的构成要件",
+        "合同相对性原则在借贷纠纷中的适用",
+        "实际用款人承担还款责任的法律依据"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        23611,
+        60,
+        18901,
+        210,
+        21613
+      ],
+      "latency_s": 3.43,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1515,
+      "run_id": "q1515_run2",
+      "run_idx": 2,
+      "question": "名义借款人与实际用款人并非同一人，借款合同关系的主体应如何认定？",
+      "gold_ids": [
+        2
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百六十五条"
+      ],
+      "sub_queries": [
+        "名义借款人与实际用款人不一致时借款合同主体认定",
+        "借款合同关系成立的构成要件",
+        "合同相对性原则在借贷纠纷中的适用",
+        "实际用款人承担还款责任的法律依据"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        23611,
+        60,
+        18901,
+        210,
+        21613
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1515,
+      "run_id": "q1515_run3",
+      "run_idx": 3,
+      "question": "名义借款人与实际用款人并非同一人，借款合同关系的主体应如何认定？",
+      "gold_ids": [
+        2
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百六十五条"
+      ],
+      "sub_queries": [
+        "名义借款人与实际用款人不一致时借款合同主体认定",
+        "借款合同关系成立的构成要件",
+        "合同相对性原则在借贷纠纷中的适用",
+        "实际用款人承担还款责任的法律依据"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        23611,
+        60,
+        18901,
+        210,
+        21613
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 928,
+      "run_id": "q928_run1",
+      "run_idx": 1,
+      "question": "金融机构发放的贷款利率是否适用《民间借贷司法解释》关于民间借贷LPR4倍利率保护上限的规定？/民间借贷是什么？/《民间借贷司法解释》的适用范围是什么？",
+      "gold_ids": [
+        25351
+      ],
+      "gold_names": [
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第一条"
+      ],
+      "sub_queries": [
+        "金融机构贷款利率是否适用民间借贷LPR四倍上限",
+        "民间借贷的法律定义及构成要件",
+        "《民间借贷司法解释》的适用范围与主体限制"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 3,
+      "retrieved_ids": [],
+      "latency_s": 21.056,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 0,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": "HTTPSConnectionPool(host='dashscope.aliyuncs.com', port=443): Max retries exceeded with url: /compatible-mode/v1/embeddings (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000262B11CF770>, 'Connection to dashscope.aliyuncs.com timed out. (connect timeout=60)'))"
+    },
+    {
+      "query_id": 928,
+      "run_id": "q928_run2",
+      "run_idx": 2,
+      "question": "金融机构发放的贷款利率是否适用《民间借贷司法解释》关于民间借贷LPR4倍利率保护上限的规定？/民间借贷是什么？/《民间借贷司法解释》的适用范围是什么？",
+      "gold_ids": [
+        25351
+      ],
+      "gold_names": [
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第一条"
+      ],
+      "sub_queries": [
+        "金融机构贷款利率是否适用民间借贷LPR四倍上限",
+        "民间借贷的法律定义及构成要件",
+        "《民间借贷司法解释》的适用范围与主体限制"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 3,
+      "retrieved_ids": [
+        25351,
+        25375,
+        29585,
+        23611
+      ],
+      "latency_s": 2.562,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 928,
+      "run_id": "q928_run3",
+      "run_idx": 3,
+      "question": "金融机构发放的贷款利率是否适用《民间借贷司法解释》关于民间借贷LPR4倍利率保护上限的规定？/民间借贷是什么？/《民间借贷司法解释》的适用范围是什么？",
+      "gold_ids": [
+        25351
+      ],
+      "gold_names": [
+        "最高人民法院关于审理民间借贷案件适用法律若干问题的规定第一条"
+      ],
+      "sub_queries": [
+        "金融机构贷款利率是否适用民间借贷LPR四倍上限",
+        "民间借贷的法律定义及构成要件",
+        "《民间借贷司法解释》的适用范围与主体限制"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 3,
+      "retrieved_ids": [
+        25351,
+        25375,
+        29585,
+        23611
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1324,
+      "run_id": "q1324_run1",
+      "run_idx": 1,
+      "question": "什么是行政处罚？",
+      "gold_ids": [
+        9393,
+        9391
+      ],
+      "gold_names": [
+        "行政处罚法第二条",
+        "行政处罚法第四条"
+      ],
+      "sub_queries": [
+        "行政处罚的定义和法律概念"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        9391,
+        9393,
+        9417,
+        9422,
+        17510
+      ],
+      "latency_s": 0.942,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1324,
+      "run_id": "q1324_run2",
+      "run_idx": 2,
+      "question": "什么是行政处罚？",
+      "gold_ids": [
+        9393,
+        9391
+      ],
+      "gold_names": [
+        "行政处罚法第二条",
+        "行政处罚法第四条"
+      ],
+      "sub_queries": [
+        "行政处罚的定义和法律概念"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        9391,
+        9393,
+        9417,
+        9422,
+        17510
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1324,
+      "run_id": "q1324_run3",
+      "run_idx": 3,
+      "question": "什么是行政处罚？",
+      "gold_ids": [
+        9393,
+        9391
+      ],
+      "gold_names": [
+        "行政处罚法第二条",
+        "行政处罚法第四条"
+      ],
+      "sub_queries": [
+        "行政处罚的法律定义"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        9391,
+        9393,
+        9417,
+        17510,
+        9422
+      ],
+      "latency_s": 0.797,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 736,
+      "run_id": "q736_run1",
+      "run_idx": 1,
+      "question": "担保合同无效后，承担了赔偿责任的担保人能不能向反担保人追偿？",
+      "gold_ids": [
+        30135
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第十九条"
+      ],
+      "sub_queries": [
+        "担保合同无效后担保人赔偿责任的追偿权",
+        "反担保人责任在主合同或担保合同无效时的效力",
+        "担保人向反担保人追偿的法律依据",
+        "反担保合同无效时的赔偿责任分担"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        30135,
+        1039,
+        30129
+      ],
+      "latency_s": 3.47,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 736,
+      "run_id": "q736_run2",
+      "run_idx": 2,
+      "question": "担保合同无效后，承担了赔偿责任的担保人能不能向反担保人追偿？",
+      "gold_ids": [
+        30135
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第十九条"
+      ],
+      "sub_queries": [
+        "担保合同无效后担保人赔偿责任的性质",
+        "反担保合同效力是否独立于主担保合同",
+        "担保人向反担保人追偿的法律依据",
+        "担保人追偿权在合同无效后的存续与范围"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        30135,
+        1039,
+        30129
+      ],
+      "latency_s": 2.61,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 736,
+      "run_id": "q736_run3",
+      "run_idx": 3,
+      "question": "担保合同无效后，承担了赔偿责任的担保人能不能向反担保人追偿？",
+      "gold_ids": [
+        30135
+      ],
+      "gold_names": [
+        "最高人民法院关于适用《民法典》有关担保制度的解释第十九条"
+      ],
+      "sub_queries": [
+        "担保合同无效后担保人赔偿责任的性质",
+        "反担保合同效力是否独立于主担保合同",
+        "担保人向反担保人追偿的法律依据",
+        "担保人追偿权在合同无效后的存续与范围"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        30135,
+        1039,
+        30129
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 3,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 205,
+      "run_id": "q205_run1",
+      "run_idx": 1,
+      "question": "因为之前和供电/供热/供气/热力公司闹过矛盾，他们居然拒绝继续给我供电/供热/供气/供热力，应该怎么办？",
+      "gold_ids": [
+        185,
+        193
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百四十八条",
+        "中华人民共和国民法典第六百五十六条"
+      ],
+      "sub_queries": [
+        "供用电合同中经营者拒绝履约的法律依据",
+        "公共服务提供者停供行为的合法性要件",
+        "用户与公用企业纠纷中继续履行合同的救济途径",
+        "行政机关对公用事业拒供行为的监管职责"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        185,
+        36169,
+        27370,
+        36517,
+        24001
+      ],
+      "latency_s": 3.267,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 205,
+      "run_id": "q205_run2",
+      "run_idx": 2,
+      "question": "因为之前和供电/供热/供气/热力公司闹过矛盾，他们居然拒绝继续给我供电/供热/供气/供热力，应该怎么办？",
+      "gold_ids": [
+        185,
+        193
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百四十八条",
+        "中华人民共和国民法典第六百五十六条"
+      ],
+      "sub_queries": [
+        "供用电合同中经营者拒绝履约的法律依据",
+        "公用事业服务强制缔约义务适用情形",
+        "用户与供电供热供气公司纠纷维权途径",
+        "公共服务停供行为的行政监管与救济"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        185,
+        36517,
+        6554,
+        193,
+        21376
+      ],
+      "latency_s": 2.603,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.8772,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8772
+      },
+      "error": null
+    },
+    {
+      "query_id": 205,
+      "run_id": "q205_run3",
+      "run_idx": 3,
+      "question": "因为之前和供电/供热/供气/热力公司闹过矛盾，他们居然拒绝继续给我供电/供热/供气/供热力，应该怎么办？",
+      "gold_ids": [
+        185,
+        193
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第六百四十八条",
+        "中华人民共和国民法典第六百五十六条"
+      ],
+      "sub_queries": [
+        "供用电合同中经营者拒绝履约的法律依据",
+        "公共服务提供者停供是否构成滥用权利",
+        "用户与公用企业纠纷中继续履行合同的救济途径",
+        "因矛盾导致停供是否违反强制缔约义务"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        36517,
+        114,
+        185,
+        27370,
+        14994
+      ],
+      "latency_s": 1.857,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 0.3333,
+      "ndcg@5": 0.3066,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.3333,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.3066,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.3066
+      },
+      "error": null
+    },
+    {
+      "query_id": 687,
+      "run_id": "q687_run1",
+      "run_idx": 1,
+      "question": "承揽合同纠纷的管辖权如何确定？",
+      "gold_ids": [
+        21601
+      ],
+      "gold_names": [
+        "民事诉讼法第二十三条"
+      ],
+      "sub_queries": [
+        "承揽合同纠纷 管辖权 确定规则"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        21613,
+        30137,
+        21897,
+        23758,
+        28647
+      ],
+      "latency_s": 0.916,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 687,
+      "run_id": "q687_run2",
+      "run_idx": 2,
+      "question": "承揽合同纠纷的管辖权如何确定？",
+      "gold_ids": [
+        21601
+      ],
+      "gold_names": [
+        "民事诉讼法第二十三条"
+      ],
+      "sub_queries": [
+        "承揽合同纠纷 管辖权 确定规则"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        21613,
+        30137,
+        21897,
+        23758,
+        28647
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 687,
+      "run_id": "q687_run3",
+      "run_idx": 3,
+      "question": "承揽合同纠纷的管辖权如何确定？",
+      "gold_ids": [
+        21601
+      ],
+      "gold_names": [
+        "民事诉讼法第二十三条"
+      ],
+      "sub_queries": [
+        "承揽合同纠纷 管辖权 确定规则"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        21613,
+        30137,
+        21897,
+        23758,
+        28647
+      ],
+      "latency_s": 0.001,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1233,
+      "run_id": "q1233_run1",
+      "run_idx": 1,
+      "question": "文字作品有长度要求吗？",
+      "gold_ids": [
+        12488,
+        34905
+      ],
+      "gold_names": [
+        "著作权法第三条",
+        "著作权法实施条例第四条"
+      ],
+      "sub_queries": [
+        "文字作品有长度要求吗？"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        34905,
+        12488,
+        42754,
+        34903,
+        28276
+      ],
+      "latency_s": 0.918,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1233,
+      "run_id": "q1233_run2",
+      "run_idx": 2,
+      "question": "文字作品有长度要求吗？",
+      "gold_ids": [
+        12488,
+        34905
+      ],
+      "gold_names": [
+        "著作权法第三条",
+        "著作权法实施条例第四条"
+      ],
+      "sub_queries": [
+        "文字作品著作权保护是否要求最低字数"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        12488,
+        42754,
+        34905,
+        34903,
+        28276
+      ],
+      "latency_s": 0.801,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9197,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "error": null
+    },
+    {
+      "query_id": 1233,
+      "run_id": "q1233_run3",
+      "run_idx": 3,
+      "question": "文字作品有长度要求吗？",
+      "gold_ids": [
+        12488,
+        34905
+      ],
+      "gold_names": [
+        "著作权法第三条",
+        "著作权法实施条例第四条"
+      ],
+      "sub_queries": [
+        "文字作品著作权保护是否要求最低字数"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        12488,
+        42754,
+        34905,
+        34903,
+        28276
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9197,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "error": null
+    },
+    {
+      "query_id": 544,
+      "run_id": "q544_run1",
+      "run_idx": 1,
+      "question": "我可以使用别人的注册商标描述我的商品或服务特征吗？",
+      "gold_ids": [
+        10939
+      ],
+      "gold_names": [
+        "商标法第五十九条"
+      ],
+      "sub_queries": [
+        "使用他人注册商标描述商品特征是否构成合理使用",
+        "商标描述性使用构成要件",
+        "商标权侵权例外情形",
+        "避免消费者混淆的判断标准"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        10939,
+        30733,
+        28018,
+        43057,
+        20722
+      ],
+      "latency_s": 3.52,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 544,
+      "run_id": "q544_run2",
+      "run_idx": 2,
+      "question": "我可以使用别人的注册商标描述我的商品或服务特征吗？",
+      "gold_ids": [
+        10939
+      ],
+      "gold_names": [
+        "商标法第五十九条"
+      ],
+      "sub_queries": [
+        "商标合理使用范围",
+        "描述性使用注册商标合法性",
+        "商标权侵权例外情形",
+        "商品特征描述与商标混淆可能性"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        10939,
+        30733,
+        43057,
+        28018,
+        10891
+      ],
+      "latency_s": 2.439,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 544,
+      "run_id": "q544_run3",
+      "run_idx": 3,
+      "question": "我可以使用别人的注册商标描述我的商品或服务特征吗？",
+      "gold_ids": [
+        10939
+      ],
+      "gold_names": [
+        "商标法第五十九条"
+      ],
+      "sub_queries": [
+        "使用他人注册商标描述商品特征是否构成合理使用",
+        "商标描述性使用构成要件",
+        "商标权侵权例外情形",
+        "避免消费者混淆的判断标准"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        10939,
+        30733,
+        28018,
+        43057,
+        20722
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 574,
+      "run_id": "q574_run1",
+      "run_idx": 1,
+      "question": "政府已经给我颁发了宅基地的权属证明，我可以在宅基地范围自由建造自己的围墙，邻居不能阻止吧？",
+      "gold_ids": [
+        939,
+        1013
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第二百八十八条",
+        "中华人民共和国民法典第三百六十二条"
+      ],
+      "sub_queries": [
+        "持有宅基地权属证明是否包含在宅基地范围内建造围墙的排他性权利"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1013,
+        23010,
+        30884,
+        1016,
+        8497
+      ],
+      "latency_s": 0.927,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 574,
+      "run_id": "q574_run2",
+      "run_idx": 2,
+      "question": "政府已经给我颁发了宅基地的权属证明，我可以在宅基地范围自由建造自己的围墙，邻居不能阻止吧？",
+      "gold_ids": [
+        939,
+        1013
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第二百八十八条",
+        "中华人民共和国民法典第三百六十二条"
+      ],
+      "sub_queries": [
+        "宅基地权属证明的法律效力",
+        "宅基地使用权范围内的建造行为权限",
+        "建造围墙是否需符合规划许可",
+        "邻居阻止建围墙的抗辩事由"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1013,
+        5099,
+        6107,
+        44462,
+        939
+      ],
+      "latency_s": 3.182,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.8503,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8503
+      },
+      "error": null
+    },
+    {
+      "query_id": 574,
+      "run_id": "q574_run3",
+      "run_idx": 3,
+      "question": "政府已经给我颁发了宅基地的权属证明，我可以在宅基地范围自由建造自己的围墙，邻居不能阻止吧？",
+      "gold_ids": [
+        939,
+        1013
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第二百八十八条",
+        "中华人民共和国民法典第三百六十二条"
+      ],
+      "sub_queries": [
+        "宅基地权属证明的法律效力",
+        "宅基地使用权范围内的建造权限",
+        "建造围墙是否需符合规划许可",
+        "邻居阻拦建围墙的抗辩事由"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1013,
+        44462,
+        6107,
+        883,
+        30884
+      ],
+      "latency_s": 22.276,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 778,
+      "run_id": "q778_run1",
+      "run_idx": 1,
+      "question": "已质押的股权，可以转让吗？",
+      "gold_ids": [
+        1094
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百四十三条"
+      ],
+      "sub_queries": [
+        "已质押股权的转让效力"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1094,
+        13065,
+        30185,
+        27515,
+        1095
+      ],
+      "latency_s": 0.923,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 778,
+      "run_id": "q778_run2",
+      "run_idx": 2,
+      "question": "已质押的股权，可以转让吗？",
+      "gold_ids": [
+        1094
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百四十三条"
+      ],
+      "sub_queries": [
+        "已质押股权的转让效力"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1094,
+        13065,
+        30185,
+        27515,
+        1095
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 778,
+      "run_id": "q778_run3",
+      "run_idx": 3,
+      "question": "已质押的股权，可以转让吗？",
+      "gold_ids": [
+        1094
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百四十三条"
+      ],
+      "sub_queries": [
+        "已质押股权的转让效力"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1094,
+        13065,
+        30185,
+        27515,
+        1095
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1534,
+      "run_id": "q1534_run1",
+      "run_idx": 1,
+      "question": "高度危险作业人在作业时自身发生伤亡，是否适用承担高度危险责任？",
+      "gold_ids": [
+        1186
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百三十六条"
+      ],
+      "sub_queries": [
+        "高度危险作业人自身伤亡是否适用高度危险责任"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1186,
+        1203,
+        30215,
+        18114,
+        42943
+      ],
+      "latency_s": 0.838,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1534,
+      "run_id": "q1534_run2",
+      "run_idx": 2,
+      "question": "高度危险作业人在作业时自身发生伤亡，是否适用承担高度危险责任？",
+      "gold_ids": [
+        1186
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百三十六条"
+      ],
+      "sub_queries": [
+        "高度危险作业人自身伤亡是否适用高度危险责任"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1186,
+        1203,
+        30215,
+        18114,
+        42943
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1534,
+      "run_id": "q1534_run3",
+      "run_idx": 3,
+      "question": "高度危险作业人在作业时自身发生伤亡，是否适用承担高度危险责任？",
+      "gold_ids": [
+        1186
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千二百三十六条"
+      ],
+      "sub_queries": [
+        "高度危险作业人自身伤亡是否适用高度危险责任"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        1186,
+        1203,
+        30215,
+        18114,
+        42943
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1092,
+      "run_id": "q1092_run1",
+      "run_idx": 1,
+      "question": "支票被他人盗取了，可以抓他吗？",
+      "gold_ids": [
+        30778
+      ],
+      "gold_names": [
+        "最高人民法院、最高人民检察院关于办理盗窃刑事案件适用法律若干问题的解释第五条"
+      ],
+      "sub_queries": [
+        "支票被盗取行为是否构成犯罪及追责"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        44717,
+        4161,
+        19064,
+        55137,
+        9281
+      ],
+      "latency_s": 0.91,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1092,
+      "run_id": "q1092_run2",
+      "run_idx": 2,
+      "question": "支票被他人盗取了，可以抓他吗？",
+      "gold_ids": [
+        30778
+      ],
+      "gold_names": [
+        "最高人民法院、最高人民检察院关于办理盗窃刑事案件适用法律若干问题的解释第五条"
+      ],
+      "sub_queries": [
+        "支票被盗取行为是否构成犯罪及追责"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        44717,
+        4161,
+        19064,
+        55137,
+        9281
+      ],
+      "latency_s": 0.0,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1092,
+      "run_id": "q1092_run3",
+      "run_idx": 3,
+      "question": "支票被他人盗取了，可以抓他吗？",
+      "gold_ids": [
+        30778
+      ],
+      "gold_names": [
+        "最高人民法院、最高人民检察院关于办理盗窃刑事案件适用法律若干问题的解释第五条"
+      ],
+      "sub_queries": [
+        "支票被盗取行为是否构成犯罪及追责"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        44717,
+        4161,
+        19064,
+        55137,
+        9281
+      ],
+      "latency_s": 0.001,
+      "hit@5": 0,
+      "recall@5": 0.0,
+      "mrr": 0.0,
+      "ndcg@5": 0.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 645,
+      "run_id": "q645_run1",
+      "run_idx": 1,
+      "question": "建设工程优先受偿权应当如何行使？",
+      "gold_ids": [
+        344,
+        21781,
+        21782
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百零七条",
+        "民事诉讼法第二百零三条",
+        "民事诉讼法第二百零四条"
+      ],
+      "sub_queries": [
+        "建设工程优先受偿权行使条件",
+        "建设工程优先受偿权行使方式",
+        "建设工程优先受偿权行使期限",
+        "建设工程优先受偿权是否需登记"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        344,
+        1041,
+        21824,
+        11092
+      ],
+      "latency_s": 3.601,
+      "hit@5": 1,
+      "recall@5": 0.3333,
+      "mrr": 1.0,
+      "ndcg@5": 0.4693,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.3333,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 0.3333,
+        "ndcg@5": 0.4693
+      },
+      "error": null
+    },
+    {
+      "query_id": 645,
+      "run_id": "q645_run2",
+      "run_idx": 2,
+      "question": "建设工程优先受偿权应当如何行使？",
+      "gold_ids": [
+        344,
+        21781,
+        21782
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百零七条",
+        "民事诉讼法第二百零三条",
+        "民事诉讼法第二百零四条"
+      ],
+      "sub_queries": [
+        "建设工程优先受偿权行使条件",
+        "建设工程优先受偿权行使方式",
+        "建设工程优先受偿权行使期限",
+        "建设工程优先受偿权是否需登记"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        344,
+        1041,
+        21824,
+        11092
+      ],
+      "latency_s": 0.001,
+      "hit@5": 1,
+      "recall@5": 0.3333,
+      "mrr": 1.0,
+      "ndcg@5": 0.4693,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.3333,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 0.3333,
+        "ndcg@5": 0.4693
+      },
+      "error": null
+    },
+    {
+      "query_id": 645,
+      "run_id": "q645_run3",
+      "run_idx": 3,
+      "question": "建设工程优先受偿权应当如何行使？",
+      "gold_ids": [
+        344,
+        21781,
+        21782
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第八百零七条",
+        "民事诉讼法第二百零三条",
+        "民事诉讼法第二百零四条"
+      ],
+      "sub_queries": [
+        "建设工程优先受偿权行使条件",
+        "建设工程优先受偿权行使方式",
+        "建设工程优先受偿权行使期限",
+        "建设工程优先受偿权是否需登记"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        344,
+        1041,
+        21824,
+        11092
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 0.3333,
+      "mrr": 1.0,
+      "ndcg@5": 0.4693,
+      "metrics": {
+        "retrieved_count": 4,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.3333,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 0.3333,
+        "ndcg@5": 0.4693
+      },
+      "error": null
+    },
+    {
+      "query_id": 780,
+      "run_id": "q780_run1",
+      "run_idx": 1,
+      "question": "商标能设立质权吗？",
+      "gold_ids": [
+        43058,
+        1078,
+        1095
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百二十七条",
+        "中华人民共和国民法典第四百四十四条",
+        "商标法实施条例第七十条"
+      ],
+      "sub_queries": [
+        "商标能否设立质权"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        43058,
+        1095,
+        27515,
+        1092,
+        1078
+      ],
+      "latency_s": 0.948,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9469,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9469
+      },
+      "error": null
+    },
+    {
+      "query_id": 780,
+      "run_id": "q780_run2",
+      "run_idx": 2,
+      "question": "商标能设立质权吗？",
+      "gold_ids": [
+        43058,
+        1078,
+        1095
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百二十七条",
+        "中华人民共和国民法典第四百四十四条",
+        "商标法实施条例第七十条"
+      ],
+      "sub_queries": [
+        "商标能否设立质权"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        43058,
+        1095,
+        27515,
+        1092,
+        1078
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9469,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9469
+      },
+      "error": null
+    },
+    {
+      "query_id": 780,
+      "run_id": "q780_run3",
+      "run_idx": 3,
+      "question": "商标能设立质权吗？",
+      "gold_ids": [
+        43058,
+        1078,
+        1095
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第四百二十七条",
+        "中华人民共和国民法典第四百四十四条",
+        "商标法实施条例第七十条"
+      ],
+      "sub_queries": [
+        "商标能否设立质权"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        43058,
+        1095,
+        27515,
+        1092,
+        1078
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9469,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9469
+      },
+      "error": null
+    },
+    {
+      "query_id": 909,
+      "run_id": "q909_run1",
+      "run_idx": 1,
+      "question": "校园伤害事故中未成年人及学校均有过错的，责任应当如何认定？",
+      "gold_ids": [
+        1138,
+        1149
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百八十八条",
+        "中华人民共和国民法典第一千一百九十九条"
+      ],
+      "sub_queries": [
+        "未成年人校园伤害事故过错责任构成要件",
+        "学校未尽教育管理职责的侵权责任认定",
+        "共同过错下未成年人与学校责任分担比例",
+        "民法典第1188条与第120条适用关系"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1149,
+        41387,
+        1119,
+        30523,
+        14270
+      ],
+      "latency_s": 3.453,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 909,
+      "run_id": "q909_run2",
+      "run_idx": 2,
+      "question": "校园伤害事故中未成年人及学校均有过错的，责任应当如何认定？",
+      "gold_ids": [
+        1138,
+        1149
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百八十八条",
+        "中华人民共和国民法典第一千一百九十九条"
+      ],
+      "sub_queries": [
+        "未成年人校园伤害事故过错责任构成要件",
+        "学校管理过失在校园伤害中的认定标准",
+        "共同过错下未成年人与学校责任分担比例",
+        "校园伤害事故中监护人责任与学校替代责任关系"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1149,
+        1119,
+        1138,
+        1218,
+        14270
+      ],
+      "latency_s": 1.689,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 0.9197,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "error": null
+    },
+    {
+      "query_id": 909,
+      "run_id": "q909_run3",
+      "run_idx": 3,
+      "question": "校园伤害事故中未成年人及学校均有过错的，责任应当如何认定？",
+      "gold_ids": [
+        1138,
+        1149
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百八十八条",
+        "中华人民共和国民法典第一千一百九十九条"
+      ],
+      "sub_queries": [
+        "未成年人校园伤害事故过错责任构成要件",
+        "学校未尽管理职责的侵权责任认定",
+        "共同过错下未成年人与学校责任分担比例",
+        "民法典监护人责任与教育机构补充责任适用"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1149,
+        5368,
+        1203,
+        1119,
+        14270
+      ],
+      "latency_s": 1.643,
+      "hit@5": 1,
+      "recall@5": 0.5,
+      "mrr": 1.0,
+      "ndcg@5": 0.6131,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "error": null
+    },
+    {
+      "query_id": 465,
+      "run_id": "q465_run1",
+      "run_idx": 1,
+      "question": "多家医疗机构对同一患者进行诊治发生的医疗损害责任纠纷，可以作为共同被告被诉，但其中某个医疗机构虽有过错诊疗行为，但该行为与损害后果没有因果关系的，则该医疗机构需要承担赔偿责任吗？",
+      "gold_ids": [
+        1168,
+        29686
+      ],
+      "gold_names": [
+        "最高人民法院关于审理医疗损害责任纠纷案件适用法律若干问题的解释第二条",
+        "中华人民共和国民法典第一千二百一十八条"
+      ],
+      "sub_queries": [
+        "多家医疗机构共同被告医疗损害责任构成要件",
+        "过错诊疗行为与损害无因果关系的免责依据",
+        "医疗损害责任中因果关系的认定标准",
+        "部分过错医疗机构的责任承担与连带责任适用"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1168,
+        29686,
+        1123,
+        30949,
+        37916
+      ],
+      "latency_s": 3.524,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 465,
+      "run_id": "q465_run2",
+      "run_idx": 2,
+      "question": "多家医疗机构对同一患者进行诊治发生的医疗损害责任纠纷，可以作为共同被告被诉，但其中某个医疗机构虽有过错诊疗行为，但该行为与损害后果没有因果关系的，则该医疗机构需要承担赔偿责任吗？",
+      "gold_ids": [
+        1168,
+        29686
+      ],
+      "gold_names": [
+        "最高人民法院关于审理医疗损害责任纠纷案件适用法律若干问题的解释第二条",
+        "中华人民共和国民法典第一千二百一十八条"
+      ],
+      "sub_queries": [
+        "多家医疗机构共同被告医疗损害责任认定",
+        "过错诊疗行为与损害无因果关系是否担责",
+        "医疗损害责任中因果关系要件的认定标准",
+        "共同被告中部分机构无因果关系的赔偿责任排除"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1168,
+        29686,
+        1123,
+        30938,
+        30949
+      ],
+      "latency_s": 3.355,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 465,
+      "run_id": "q465_run3",
+      "run_idx": 3,
+      "question": "多家医疗机构对同一患者进行诊治发生的医疗损害责任纠纷，可以作为共同被告被诉，但其中某个医疗机构虽有过错诊疗行为，但该行为与损害后果没有因果关系的，则该医疗机构需要承担赔偿责任吗？",
+      "gold_ids": [
+        1168,
+        29686
+      ],
+      "gold_names": [
+        "最高人民法院关于审理医疗损害责任纠纷案件适用法律若干问题的解释第二条",
+        "中华人民共和国民法典第一千二百一十八条"
+      ],
+      "sub_queries": [
+        "多家医疗机构共同被告医疗损害责任认定",
+        "过错诊疗行为与损害无因果关系是否担责",
+        "医疗损害责任构成要件中的因果关系要求",
+        "医疗机构按份责任或连带责任适用条件"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 4,
+      "retrieved_ids": [
+        1168,
+        29686,
+        828,
+        1123,
+        30949
+      ],
+      "latency_s": 1.838,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 582,
+      "run_id": "q582_run1",
+      "run_idx": 1,
+      "question": "宅基地被征收了，会有补偿吗？",
+      "gold_ids": [
+        5085
+      ],
+      "gold_names": [
+        "土地管理法第四十八条"
+      ],
+      "sub_queries": [
+        "宅基地被征收是否获得补偿"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        5085,
+        34521,
+        5410,
+        34523,
+        11119
+      ],
+      "latency_s": 0.884,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 582,
+      "run_id": "q582_run2",
+      "run_idx": 2,
+      "question": "宅基地被征收了，会有补偿吗？",
+      "gold_ids": [
+        5085
+      ],
+      "gold_names": [
+        "土地管理法第四十八条"
+      ],
+      "sub_queries": [
+        "宅基地被征收的补偿规定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        5085,
+        34521,
+        5410,
+        34523,
+        6114
+      ],
+      "latency_s": 0.964,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 582,
+      "run_id": "q582_run3",
+      "run_idx": 3,
+      "question": "宅基地被征收了，会有补偿吗？",
+      "gold_ids": [
+        5085
+      ],
+      "gold_names": [
+        "土地管理法第四十八条"
+      ],
+      "sub_queries": [
+        "宅基地被征收的补偿规定"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        5085,
+        34521,
+        5410,
+        34523,
+        6114
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1191,
+      "run_id": "q1191_run1",
+      "run_idx": 1,
+      "question": "继承顺序如何确定？",
+      "gold_ids": [
+        609,
+        613
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百二十七条",
+        "中华人民共和国民法典第一千一百二十三条"
+      ],
+      "sub_queries": [
+        "继承顺序的法律确定规则"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        613,
+        609,
+        615,
+        24563,
+        24576
+      ],
+      "latency_s": 0.816,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1191,
+      "run_id": "q1191_run2",
+      "run_idx": 2,
+      "question": "继承顺序如何确定？",
+      "gold_ids": [
+        609,
+        613
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百二十七条",
+        "中华人民共和国民法典第一千一百二十三条"
+      ],
+      "sub_queries": [
+        "继承顺序的法律确定规则"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        613,
+        609,
+        615,
+        24563,
+        24576
+      ],
+      "latency_s": 0.001,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    },
+    {
+      "query_id": 1191,
+      "run_id": "q1191_run3",
+      "run_idx": 3,
+      "question": "继承顺序如何确定？",
+      "gold_ids": [
+        609,
+        613
+      ],
+      "gold_names": [
+        "中华人民共和国民法典第一千一百二十七条",
+        "中华人民共和国民法典第一千一百二十三条"
+      ],
+      "sub_queries": [
+        "继承顺序的法律确定规则"
+      ],
+      "plan_source": "llm_fresh",
+      "n_sub_queries": 1,
+      "retrieved_ids": [
+        613,
+        609,
+        615,
+        24563,
+        24576
+      ],
+      "latency_s": 0.0,
+      "hit@5": 1,
+      "recall@5": 1.0,
+      "mrr": 1.0,
+      "ndcg@5": 1.0,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "error": null
+    }
+  ],
+  "per_question_summary": {
+    "43": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "52": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "54": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          0.3333,
+          0.3333,
+          0.3333
+        ],
+        "mean": 0.3333
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "128": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.6667,
+          0.6667,
+          0.6667
+        ],
+        "mean": 0.6667
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "185": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mean": 0.5
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "200": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "205": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.5,
+          1.0,
+          0.5
+        ],
+        "mean": 0.6667
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          0.3333
+        ],
+        "mean": 0.7778
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "243": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "mean": 0.75
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "275": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "292": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          0.5,
+          1.0,
+          1.0
+        ],
+        "mean": 0.8333
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        1,
+        1
+      ]
+    },
+    "303": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "346": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "353": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "398": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          1
+        ],
+        "mean": 0.3333,
+        "std": 0.4714
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "mean": 0.1667
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "mean": 0.1667
+      },
+      "pass@3": 1,
+      "always_hit@3": 0,
+      "never_hit@3": 0,
+      "flaky@3": 1,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "404": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "454": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mean": 0.5
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "465": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "544": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "566": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "574": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.5,
+          1.0,
+          0.5
+        ],
+        "mean": 0.6667
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        4,
+        4
+      ]
+    },
+    "582": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "645": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.3333,
+          0.3333,
+          0.3333
+        ],
+        "mean": 0.3333
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "687": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "695": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mean": 0.5
+      },
+      "mrr": {
+        "values": [
+          0.2,
+          0.2,
+          0.2
+        ],
+        "mean": 0.2
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "736": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "770": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.6667,
+          0.6667,
+          0.6667
+        ],
+        "mean": 0.6667
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "778": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "780": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "787": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "909": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.5,
+          1.0,
+          0.5
+        ],
+        "mean": 0.6667
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "928": {
+      "hit@5": {
+        "values": [
+          0,
+          1,
+          1
+        ],
+        "mean": 0.6667,
+        "std": 0.4714
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "mean": 0.6667
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "mean": 0.6667
+      },
+      "pass@3": 1,
+      "always_hit@3": 0,
+      "never_hit@3": 0,
+      "flaky@3": 1,
+      "sub_queries_per_run": [
+        3,
+        3,
+        3
+      ]
+    },
+    "945": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          0.3333,
+          0.3333
+        ],
+        "mean": 0.5555
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1092": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "1102": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mean": 0.5
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1120": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "1179": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          0.3333,
+          0.3333,
+          0.3333
+        ],
+        "mean": 0.3333
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1191": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "1218": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "1233": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "1245": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mean": 0.5
+      },
+      "mrr": {
+        "values": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "mean": 0.5
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "1277": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1304": {
+      "hit@5": {
+        "values": [
+          0,
+          1,
+          1
+        ],
+        "mean": 0.6667,
+        "std": 0.4714
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "mean": 0.6667
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "mean": 0.6667
+      },
+      "pass@3": 1,
+      "always_hit@3": 0,
+      "never_hit@3": 0,
+      "flaky@3": 1,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1324": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "1351": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        3,
+        3,
+        3
+      ]
+    },
+    "1381": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1450": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    },
+    "1475": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          0.5
+        ],
+        "mean": 0.8333
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1507": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1515": {
+      "hit@5": {
+        "values": [
+          0,
+          0,
+          0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "mrr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0
+      },
+      "pass@3": 0,
+      "always_hit@3": 0,
+      "never_hit@3": 1,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        4,
+        4,
+        4
+      ]
+    },
+    "1534": {
+      "hit@5": {
+        "values": [
+          1,
+          1,
+          1
+        ],
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "recall@5": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "mrr": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0
+      },
+      "pass@3": 1,
+      "always_hit@3": 1,
+      "never_hit@3": 0,
+      "flaky@3": 0,
+      "sub_queries_per_run": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "summary": {
+    "n_questions": 50,
+    "runs_per_question": 3,
+    "completed_questions": 50,
+    "completed_runs": 150,
+    "total_runs_target": 150,
+    "mean_hit@5": 0.7733,
+    "mean_recall@5": 0.6783,
+    "mean_mrr": 0.6873,
+    "mean_ndcg@5": 0.6338,
+    "pass@3_rate": 0.8,
+    "always_hit@3_rate": 0.74,
+    "never_hit@3_rate": 0.2,
+    "flaky@3_rate": 0.06,
+    "lat_avg_s": 1.78,
+    "avg_sub_queries": 2.4
+  }
+}

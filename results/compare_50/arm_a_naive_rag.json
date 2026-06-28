@@ -1,0 +1,1718 @@
+{
+  "variant": "emb_bm25_rrf_rerank",
+  "label": "A: 普通 RAG 单次（原题直检）",
+  "config": {
+    "limit": 50,
+    "rewrite_mode": "off",
+    "coarse_top_k": 20,
+    "bm25_top_k": 20,
+    "rerank_top_n": 5,
+    "rerank_input_top_k": 30,
+    "rrf_k": 60,
+    "embed_model": "text-embedding-v3",
+    "rerank_model": "qwen3-rerank",
+    "test_set": "data/lecoqa/test.json",
+    "started_at": "2026-06-26T00:12:38"
+  },
+  "summary": {
+    "n": 50,
+    "hit@1": 0.66,
+    "recall@1": 0.4717,
+    "ndcg@1": 0.66,
+    "hit@3": 0.72,
+    "recall@3": 0.6217,
+    "ndcg@3": 0.6251,
+    "hit@5": 0.82,
+    "recall@5": 0.74,
+    "ndcg@5": 0.6855,
+    "mrr": 0.714,
+    "lat_p50": 0.851,
+    "lat_p95": 1.026,
+    "lat_avg": 0.876,
+    "pool_avg": 5.0
+  },
+  "per_question": [
+    {
+      "query_id": "1475",
+      "question": "承运人是多式联运运，他把具体的货物运输分成很多区段运输了，把货物弄丢了，应该怎么要求赔偿？",
+      "query_used": "承运人是多式联运运，他把具体的货物运输分成很多区段运输了，把货物弄丢了，应该怎么要求赔偿？",
+      "gold_ids": [
+        376
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        376,
+        371,
+        40831,
+        366,
+        40832
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 1.402
+    },
+    {
+      "query_id": "454",
+      "question": "病人在就诊人身体出现异常状况，医务人员对病人的生命与健康漠不关心、态度不端，不及时采取救治措施，导致病人死亡的，是否构成医疗事故罪？",
+      "query_used": "病人在就诊人身体出现异常状况，医务人员对病人的生命与健康漠不关心、态度不端，不及时采取救治措施，导致病人死亡的，是否构成医疗事故罪？",
+      "gold_ids": [
+        55290,
+        55222
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        55222,
+        47561,
+        28429,
+        1168,
+        46215
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.6131
+      },
+      "latency_s": 0.955
+    },
+    {
+      "query_id": "1120",
+      "question": "隔壁装修有各种刺激性气味/垃圾有气味/生产有气味影响生活怎么办？",
+      "query_used": "隔壁装修有各种刺激性气味/垃圾有气味/生产有气味影响生活怎么办？",
+      "gold_ids": [
+        945
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        7216,
+        939,
+        7813,
+        41961,
+        44029
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.768
+    },
+    {
+      "query_id": "1102",
+      "question": "盗窃和抢劫有什么区别？",
+      "query_used": "盗窃和抢劫有什么区别？",
+      "gold_ids": [
+        55136,
+        55137
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        55142,
+        55137,
+        55136,
+        29948,
+        30788
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.6934,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.6934
+      },
+      "latency_s": 0.963
+    },
+    {
+      "query_id": "398",
+      "question": "用人单位在劳动合同中以“安全奖”约定扣发奖金，离职后如与用人单位无纠纷或无泄密则予以补发，是否有效？",
+      "query_used": "用人单位在劳动合同中以“安全奖”约定扣发奖金，离职后如与用人单位无纠纷或无泄密则予以补发，是否有效？",
+      "gold_ids": [
+        14460,
+        14461
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        14457,
+        14729,
+        30100,
+        13645,
+        14461
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.2,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.2372
+      },
+      "latency_s": 0.806
+    },
+    {
+      "query_id": "787",
+      "question": "对于政府的《补充告知书》我可以起诉吗？",
+      "query_used": "对于政府的《补充告知书》我可以起诉吗？",
+      "gold_ids": [
+        22347
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        17015,
+        27367,
+        54277,
+        34044,
+        21636
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.824
+    },
+    {
+      "query_id": "404",
+      "question": "劳动者签署放弃诉权的协议，是否有效？",
+      "query_used": "劳动者签署放弃诉权的协议，是否有效？",
+      "gold_ids": [
+        21704,
+        14460,
+        14461,
+        21591
+      ],
+      "gold_count": 4,
+      "ranked_ids": [
+        26989,
+        26477,
+        27370,
+        14461,
+        14725
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 4,
+        "mrr": 0.25,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1,
+        "recall@5": 0.25,
+        "ndcg@5": 0.1681
+      },
+      "latency_s": 0.965
+    },
+    {
+      "query_id": "200",
+      "question": "出入库手续一般如何规定？",
+      "query_used": "出入库手续一般如何规定？",
+      "gold_ids": [
+        445
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        34714,
+        445,
+        16085,
+        10630,
+        32904
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.6309,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.6309
+      },
+      "latency_s": 0.768
+    },
+    {
+      "query_id": "275",
+      "question": "酒店对用餐者车辆的保管作出的用餐者的车辆必须听从保安人员的指挥停放，并办理保管手续，按规定交纳停车占地费，否则酒店对损失概不负责”的规定，酒店和用餐者之间是否成立保管合同关系？",
+      "query_used": "酒店对用餐者车辆的保管作出的用餐者的车辆必须听从保安人员的指挥停放，并办理保管手续，按规定交纳停车占地费，否则酒店对损失概不负责”的规定，酒店和用餐者之间是否成立保管合同关系？",
+      "gold_ids": [
+        427,
+        428
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        427,
+        455,
+        428,
+        440,
+        432
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 0.9197,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.9197
+      },
+      "latency_s": 0.785
+    },
+    {
+      "query_id": "243",
+      "question": "在保理合同中，应收账款需要实际转让吗？",
+      "query_used": "在保理合同中，应收账款需要实际转让吗？",
+      "gold_ids": [
+        82,
+        83,
+        298,
+        85
+      ],
+      "gold_count": 4,
+      "ranked_ids": [
+        298,
+        301,
+        299,
+        82,
+        83
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 4,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.25,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.25,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 0.75,
+        "ndcg@5": 0.7095
+      },
+      "latency_s": 0.871
+    },
+    {
+      "query_id": "346",
+      "question": "环保公益组织能否跨地区进行公益诉讼？",
+      "query_used": "环保公益组织能否跨地区进行公益诉讼？",
+      "gold_ids": [
+        7515,
+        21636
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        7515,
+        21636,
+        25465,
+        24297,
+        24533
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.799
+    },
+    {
+      "query_id": "945",
+      "question": "偷拍、偷录获得的证据可以用来证明借贷关系存在吗？",
+      "query_used": "偷拍、偷录获得的证据可以用来证明借贷关系存在吗？",
+      "gold_ids": [
+        23652
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        23652,
+        26735,
+        22005,
+        53841,
+        23649
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.983
+    },
+    {
+      "query_id": "54",
+      "question": "产品侵权诉讼中由哪一方提供证据？",
+      "query_used": "产品侵权诉讼中由哪一方提供证据？",
+      "gold_ids": [
+        16818
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        10946,
+        23083,
+        23649,
+        31051,
+        24426
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.937
+    },
+    {
+      "query_id": "1304",
+      "question": "承租人将租赁物转让、抵押、质押、投资入股或者以其他方式处分，出租人怎么办？",
+      "query_used": "承租人将租赁物转让、抵押、质押、投资入股或者以其他方式处分，出租人怎么办？",
+      "gold_ids": [
+        290
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        290,
+        17985,
+        297,
+        245,
+        255
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.87
+    },
+    {
+      "query_id": "1179",
+      "question": "子女是本村村民，已分户且有自己的宅基地的情况下，可以继承父母的宅基地吗？",
+      "query_used": "子女是本村村民，已分户且有自己的宅基地的情况下，可以继承父母的宅基地吗？",
+      "gold_ids": [
+        5099
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        5099,
+        1013,
+        613,
+        609,
+        1016
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.841
+    },
+    {
+      "query_id": "43",
+      "question": "村民落户其他村组织，但未书面放弃的，仍继续享有土地承包经营权吗？",
+      "query_used": "村民落户其他村组织，但未书面放弃的，仍继续享有土地承包经营权吗？",
+      "gold_ids": [
+        11084,
+        11087
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        11084,
+        11087,
+        11108,
+        11090,
+        30894
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.959
+    },
+    {
+      "query_id": "695",
+      "question": "承揽人不能在合同约定期间内交付工作成果的需要承担什么责任？",
+      "query_used": "承揽人不能在合同约定期间内交付工作成果的需要承担什么责任？",
+      "gold_ids": [
+        114,
+        317
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        321,
+        421,
+        324,
+        114,
+        393
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.25,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.2641
+      },
+      "latency_s": 0.892
+    },
+    {
+      "query_id": "52",
+      "question": "产品投入流通后发现存在缺陷的，生产者、销售者应当采取哪些补救措施？",
+      "query_used": "产品投入流通后发现存在缺陷的，生产者、销售者应当采取哪些补救措施？",
+      "gold_ids": [
+        1156
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        1156,
+        16818,
+        52856,
+        16793,
+        16784
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.798
+    },
+    {
+      "query_id": "1218",
+      "question": "合同成立时一年期贷款市场报价利率四倍适用于网络贷款吗？",
+      "query_used": "合同成立时一年期贷款市场报价利率四倍适用于网络贷款吗？",
+      "gold_ids": [
+        25375
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        25375,
+        25351,
+        24165,
+        210,
+        28788
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 1.058
+    },
+    {
+      "query_id": "770",
+      "question": "有价证券如何设立质权？",
+      "query_used": "有价证券如何设立质权？",
+      "gold_ids": [
+        1092,
+        30174,
+        30175
+      ],
+      "gold_count": 3,
+      "ranked_ids": [
+        1092,
+        1094,
+        1078,
+        30174,
+        30175
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.3333,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8529
+      },
+      "latency_s": 0.801
+    },
+    {
+      "query_id": "185",
+      "question": "存货人未按照约定支付仓储费或者其他费用的怎么办？",
+      "query_used": "存货人未按照约定支付仓储费或者其他费用的怎么办？",
+      "gold_ids": [
+        440,
+        455
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        440,
+        373,
+        24001,
+        426,
+        455
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8503
+      },
+      "latency_s": 0.845
+    },
+    {
+      "query_id": "128",
+      "question": "新闻报道严重失实，报道人是否承担侵权责任？",
+      "query_used": "新闻报道严重失实，报道人是否承担侵权责任？",
+      "gold_ids": [
+        1248,
+        1245,
+        1246
+      ],
+      "gold_count": 3,
+      "ranked_ids": [
+        1245,
+        1248,
+        9273,
+        1186,
+        1247
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1,
+        "recall@5": 0.6667,
+        "ndcg@5": 0.7654
+      },
+      "latency_s": 0.832
+    },
+    {
+      "query_id": "1245",
+      "question": "翻拍平面艺术作品能形成拍摄作品吗？",
+      "query_used": "翻拍平面艺术作品能形成拍摄作品吗？",
+      "gold_ids": [
+        12488,
+        34905
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        34903,
+        34440,
+        34925,
+        12488,
+        43335
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.25,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1,
+        "recall@5": 0.5,
+        "ndcg@5": 0.2641
+      },
+      "latency_s": 0.905
+    },
+    {
+      "query_id": "566",
+      "question": "我明明和邻居约定了他可以来我这引水用，找他要一定报酬都不给，该怎么办？",
+      "query_used": "我明明和邻居约定了他可以来我这引水用，找他要一定报酬都不给，该怎么办？",
+      "gold_ids": [
+        1024,
+        1023
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        17393,
+        1001,
+        40860,
+        49644,
+        61
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.802
+    },
+    {
+      "query_id": "353",
+      "question": "我被动物咬伤了，应该找谁承担责任？",
+      "query_used": "我被动物咬伤了，应该找谁承担责任？",
+      "gold_ids": [
+        1195
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        1195,
+        1200,
+        1168,
+        1149,
+        1148
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.813
+    },
+    {
+      "query_id": "303",
+      "question": "同一债务上有多个保证人，履行保证义务的保证人是否可以向其他未履行保证义务的保证人追偿？",
+      "query_used": "同一债务上有多个保证人，履行保证义务的保证人是否可以向其他未履行保证义务的保证人追偿？",
+      "gold_ids": [
+        30129
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        30129,
+        28894,
+        11849,
+        30139,
+        230
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.856
+    },
+    {
+      "query_id": "292",
+      "question": "债权人如何要求保证人承担其保证责任？",
+      "query_used": "债权人如何要求保证人承担其保证责任？",
+      "gold_ids": [
+        30147,
+        230
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        231,
+        230,
+        30150,
+        30147,
+        229
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 0.5,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.3869,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.6509
+      },
+      "latency_s": 0.819
+    },
+    {
+      "query_id": "1450",
+      "question": "乘坐高铁，发现自己的位置被别人霸占了，这是可以的吗？",
+      "query_used": "乘坐高铁，发现自己的位置被别人霸占了，这是可以的吗？",
+      "gold_ids": [
+        352
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        16009,
+        15958,
+        46712,
+        352,
+        1110
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.25,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.4307
+      },
+      "latency_s": 0.787
+    },
+    {
+      "query_id": "1381",
+      "question": "以虚假票据或者其他虚假的产权证明作担保签订借款合同，是否构成合同诈骗罪？",
+      "query_used": "以虚假票据或者其他虚假的产权证明作担保签订借款合同，是否构成合同诈骗罪？",
+      "gold_ids": [
+        55090
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        55090,
+        28293,
+        34022,
+        27638,
+        27634
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.871
+    },
+    {
+      "query_id": "1277",
+      "question": "平台用户侵权，平台是否需要承担责任吗？",
+      "query_used": "平台用户侵权，平台是否需要承担责任吗？",
+      "gold_ids": [
+        1119
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        11388,
+        23397,
+        42768,
+        11389,
+        8443
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.976
+    },
+    {
+      "query_id": "1507",
+      "question": "借款人未按约定使用借款，贷款人如何救济？",
+      "query_used": "借款人未按约定使用借款，贷款人如何救济？",
+      "gold_ids": [
+        210
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        210,
+        25288,
+        60,
+        432,
+        440
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.82
+    },
+    {
+      "query_id": "1351",
+      "question": "取得驾驶证是否属于行政许可？不同驾驶证属于一个行政许可还是多个行政许可？发生交通事故后，公安机关能否吊销全部驾驶证件？",
+      "query_used": "取得驾驶证是否属于行政许可？不同驾驶证属于一个行政许可还是多个行政许可？发生交通事故后，公安机关能否吊销全部驾驶证件？",
+      "gold_ids": [
+        4460
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        22866,
+        49291,
+        19497,
+        19505,
+        8022
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.8
+    },
+    {
+      "query_id": "1515",
+      "question": "名义借款人与实际用款人并非同一人，借款合同关系的主体应如何认定？",
+      "query_used": "名义借款人与实际用款人并非同一人，借款合同关系的主体应如何认定？",
+      "gold_ids": [
+        2
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        23611,
+        30398,
+        11729,
+        24225,
+        210
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.931
+    },
+    {
+      "query_id": "928",
+      "question": "金融机构发放的贷款利率是否适用《民间借贷司法解释》关于民间借贷LPR4倍利率保护上限的规定？/民间借贷是什么？/《民间借贷司法解释》的适用范围是什么？",
+      "query_used": "金融机构发放的贷款利率是否适用《民间借贷司法解释》关于民间借贷LPR4倍利率保护上限的规定？/民间借贷是什么？/《民间借贷司法解释》的适用范围是什么？",
+      "gold_ids": [
+        25351
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        25351,
+        25375,
+        44037,
+        30703,
+        27573
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.8
+    },
+    {
+      "query_id": "1324",
+      "question": "什么是行政处罚？",
+      "query_used": "什么是行政处罚？",
+      "gold_ids": [
+        9393,
+        9391
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        9391,
+        9393,
+        9417,
+        19453,
+        9439
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.905
+    },
+    {
+      "query_id": "736",
+      "question": "担保合同无效后，承担了赔偿责任的担保人能不能向反担保人追偿？",
+      "query_used": "担保合同无效后，承担了赔偿责任的担保人能不能向反担保人追偿？",
+      "gold_ids": [
+        30135
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        30135,
+        30129,
+        1039,
+        30139,
+        103
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.852
+    },
+    {
+      "query_id": "205",
+      "question": "因为之前和供电/供热/供气/热力公司闹过矛盾，他们居然拒绝继续给我供电/供热/供气/供热力，应该怎么办？",
+      "query_used": "因为之前和供电/供热/供气/热力公司闹过矛盾，他们居然拒绝继续给我供电/供热/供气/供热力，应该怎么办？",
+      "gold_ids": [
+        185,
+        193
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        185,
+        19094,
+        18418,
+        193,
+        36517
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8772
+      },
+      "latency_s": 0.912
+    },
+    {
+      "query_id": "687",
+      "question": "承揽合同纠纷的管辖权如何确定？",
+      "query_used": "承揽合同纠纷的管辖权如何确定？",
+      "gold_ids": [
+        21601
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        21613,
+        30137,
+        27727,
+        21897,
+        23586
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.776
+    },
+    {
+      "query_id": "1233",
+      "question": "文字作品有长度要求吗？",
+      "query_used": "文字作品有长度要求吗？",
+      "gold_ids": [
+        12488,
+        34905
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        34905,
+        12488,
+        42754,
+        34903,
+        28276
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.798
+    },
+    {
+      "query_id": "544",
+      "question": "我可以使用别人的注册商标描述我的商品或服务特征吗？",
+      "query_used": "我可以使用别人的注册商标描述我的商品或服务特征吗？",
+      "gold_ids": [
+        10939
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        10939,
+        43057,
+        10891,
+        43065,
+        20938
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.776
+    },
+    {
+      "query_id": "574",
+      "question": "政府已经给我颁发了宅基地的权属证明，我可以在宅基地范围自由建造自己的围墙，邻居不能阻止吧？",
+      "query_used": "政府已经给我颁发了宅基地的权属证明，我可以在宅基地范围自由建造自己的围墙，邻居不能阻止吧？",
+      "gold_ids": [
+        939,
+        1013
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        1013,
+        939,
+        5099,
+        5120,
+        44462
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.849
+    },
+    {
+      "query_id": "778",
+      "question": "已质押的股权，可以转让吗？",
+      "query_used": "已质押的股权，可以转让吗？",
+      "gold_ids": [
+        1094
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        1094,
+        13065,
+        1095,
+        17866,
+        41115
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.932
+    },
+    {
+      "query_id": "1534",
+      "question": "高度危险作业人在作业时自身发生伤亡，是否适用承担高度危险责任？",
+      "query_used": "高度危险作业人在作业时自身发生伤亡，是否适用承担高度危险责任？",
+      "gold_ids": [
+        1186
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        1186,
+        1203,
+        35591,
+        30215,
+        42943
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.775
+    },
+    {
+      "query_id": "1092",
+      "question": "支票被他人盗取了，可以抓他吗？",
+      "query_used": "支票被他人盗取了，可以抓他吗？",
+      "gold_ids": [
+        30778
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        55142,
+        55137,
+        29683,
+        25750,
+        21690
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 0.0,
+        "hit@1": 0,
+        "recall@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0,
+        "recall@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 0,
+        "recall@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "latency_s": 0.766
+    },
+    {
+      "query_id": "645",
+      "question": "建设工程优先受偿权应当如何行使？",
+      "query_used": "建设工程优先受偿权应当如何行使？",
+      "gold_ids": [
+        344,
+        21781,
+        21782
+      ],
+      "gold_count": 3,
+      "ranked_ids": [
+        344,
+        1041,
+        1076,
+        31436,
+        30894
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.3333,
+        "ndcg@3": 0.4693,
+        "hit@5": 1,
+        "recall@5": 0.3333,
+        "ndcg@5": 0.4693
+      },
+      "latency_s": 1.093
+    },
+    {
+      "query_id": "780",
+      "question": "商标能设立质权吗？",
+      "query_used": "商标能设立质权吗？",
+      "gold_ids": [
+        43058,
+        1078,
+        1095
+      ],
+      "gold_count": 3,
+      "ranked_ids": [
+        43058,
+        1095,
+        1078,
+        27515,
+        1092
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 3,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.3333,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.923
+    },
+    {
+      "query_id": "909",
+      "question": "校园伤害事故中未成年人及学校均有过错的，责任应当如何认定？",
+      "query_used": "校园伤害事故中未成年人及学校均有过错的，责任应当如何认定？",
+      "gold_ids": [
+        1138,
+        1149
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        1149,
+        1119,
+        1123,
+        1138,
+        554
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 0.5,
+        "ndcg@3": 0.6131,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 0.8772
+      },
+      "latency_s": 0.896
+    },
+    {
+      "query_id": "465",
+      "question": "多家医疗机构对同一患者进行诊治发生的医疗损害责任纠纷，可以作为共同被告被诉，但其中某个医疗机构虽有过错诊疗行为，但该行为与损害后果没有因果关系的，则该医疗机构需要承担赔偿责任吗？",
+      "query_used": "多家医疗机构对同一患者进行诊治发生的医疗损害责任纠纷，可以作为共同被告被诉，但其中某个医疗机构虽有过错诊疗行为，但该行为与损害后果没有因果关系的，则该医疗机构需要承担赔偿责任吗？",
+      "gold_ids": [
+        1168,
+        29686
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        29686,
+        1168,
+        10320,
+        1123,
+        1173
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.986
+    },
+    {
+      "query_id": "582",
+      "question": "宅基地被征收了，会有补偿吗？",
+      "query_used": "宅基地被征收了，会有补偿吗？",
+      "gold_ids": [
+        5085
+      ],
+      "gold_count": 1,
+      "ranked_ids": [
+        5085,
+        34521,
+        34523,
+        5410,
+        11119
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 1,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.751
+    },
+    {
+      "query_id": "1191",
+      "question": "继承顺序如何确定？",
+      "query_used": "继承顺序如何确定？",
+      "gold_ids": [
+        609,
+        613
+      ],
+      "gold_count": 2,
+      "ranked_ids": [
+        613,
+        609,
+        615,
+        24563,
+        24576
+      ],
+      "retrieved_count": 5,
+      "candidate_pool_size": 5,
+      "metrics": {
+        "retrieved_count": 5,
+        "gold_count": 2,
+        "mrr": 1.0,
+        "hit@1": 1,
+        "recall@1": 0.5,
+        "ndcg@1": 1.0,
+        "hit@3": 1,
+        "recall@3": 1.0,
+        "ndcg@3": 1.0,
+        "hit@5": 1,
+        "recall@5": 1.0,
+        "ndcg@5": 1.0
+      },
+      "latency_s": 0.885
+    }
+  ]
+}

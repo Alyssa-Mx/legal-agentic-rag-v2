@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 密钥
+.env
+.env.*
+!.env.example
+
+# 本地索引（体积大，运行 build_kb.py 重建）
+chroma_db/
+data/lecoqa/chroma_db/
+data/lecoqa/bm25_index.pkl
+data/lecoqa/corpus.jsonl
+data/lecoqa/train.json
+
+# 评测过程输出（仓库已含 compare_50 归档结果）
+results/agent_retrieval/
+results/abl*/
+*.log
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
