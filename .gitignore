@@ -26,3 +26,6 @@ results/abl*/
 .idea/
 .vscode/
 .DS_Store
+
+# 内部发布说明（仅本地保留，不上传）
+PUBLISHING.md
